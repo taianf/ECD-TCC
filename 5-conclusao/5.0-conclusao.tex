@@ -1,0 +1,35 @@
+\chapter{Conclusão}
+\label{ch:conclusao}
+
+Podemos usar diferentes estratégias de aprendizado de máquina para resolver o mesmo problema.
+Neste trabalho as várias estratégias tiverem acurácia muito próximas, porém duas estratégias foram particularmente mais eficientes em detectar os pacientes com mais risco de óbito: o \textit{Naïve Bayes} e a Regressão Logística.
+Estes dois métodos estão entre os mais simples de se treinar e se analisar a interpretação matemática dos coeficientes.
+Isso mostra que um modelo mais complexo, capaz de se ajustar a características não-lineares, como o Perceptron Multicamadas, nem sempre terá um desempenho melhor, mesmo tendo um maior custo de treino.
+
+Em um trabalho semelhante foi analisada a relação entre os sintomas da COVID-19 e a evolução da doença~\cite{unicamp}.
+O trabalho de Pereira e Carvalho também fez uma análise das comorbidades e suas evoluções, porém comparando apenas a variação da taxa de óbito sem usar algum modelo que detectasse correlação entre as entradas.
+O trabalho deles encontrou queda de risco de óbito para as comorbidade Asma e Puérpera enquanto este trabalho encontrou queda de risco de óbito para Síndrome de Down e Doença Cardiovascular Crônica.
+
+
+\section{Comorbidades com redução de risco}
+\label{sec:comorbidades-com-reducao-de-risco}
+
+Algumas pesquisas como~\cite{carli2021asthma} mostram que a asma sob controle pode até ter um papel protetivo contra a COVID-19 enquanto que a asma não controlada pode ser um fator de risco.
+
+Em~\cite{serra2021covid} foi analisado que puérperas desenvolveram menos sintomas, mas grávidas tiveram mais complicações e aumentaram o risco de morte. Porém, nos dados obtidos pelo OPENDATASUS, não temos informações de grávidas, apenas de puérperas.
+
+No artigo ``Ações contra a COVID-19 na População com Síndrome de Down''~\cite{russo2020accoes} nos Arquivos Brasileiros de Cardiologia vemos que pessoas com Síndrome de Down tem mais prevalência de: doenças cardiovasculares;
+maior propensão ao sobrepeso e à obesidade;
+alterações nas vias aéreas que facilitam a infecção pelo vírus;
+são mais suscetíveis a infecções devido a alterações na regulação de citocinas;
+adultos frequentemente apresentam aumento dos biomarcadores pró-inflamatórios.
+Essas alterações podem ter impacto nas doenças anatômicas dos pacientes e aumentar a prevalência de condições inflamatórias crônicas e a mortalidade por sepse.
+
+Em outro artigo, ``Prevalência e Fatores Associados à SRAG por COVID-19 em Adultos e Idosos com Doença Cardiovascular Crônica''~\cite{paiva2021prevalencia}, também nos Arquivos Brasileiros de Cardiologia, está indicado que mulheres tem 4\% a menos chance de desenvolver SRAG por COVID-19.
+
+
+\section{Considerações}
+\label{sec:consideracoes}
+
+Os coeficientes encontrados pela Regressão Logística nos ajuda a interpretar a relação das comorbidades com o risco de morte mas não consideram casos de comorbidades relacionadas, como no caso da Síndrome de Down, que está relacionada a várias outras comorbidades, ou em qual estágio a comorbidade passa a ser um risco, como no caso da Asma.
+Esse trabalho pode servir de base para escolher onde focar esforços ao analisar as comorbidades e a relação com COVID-19.

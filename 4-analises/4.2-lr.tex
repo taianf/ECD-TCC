@@ -1,0 +1,48 @@
+\section{Análise da Regressão Logística}
+\label{sec:analise-da-regressao-logistica}
+
+Dentre os modelos descritos, o modelo de regressão logística é um modelo que gera coeficientes com uma relação de mais fácil interpretabilidade.
+Ao executar o código presente no repositório do GitHub deste trabalho~\cite{githubtcc}, foi obtido um modelo com os coeficientes presentes nas tabelas~\ref{tab:int-lr} e~\ref{tab:coef-lr}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Coeficiente & Valor               & Probabilidade (\%) \\ \hline
+        Intercepto  & -0.9615349252132588 & 27.66              \\ \hline
+    \end{tabular}
+    \caption{Intercepto do modelo de regressão logística}
+    \label{tab:int-lr}
+\end{table}
+
+\begin{table}[h]
+    \texttt{\scriptsize
+    \centering
+        \begin{tabular}{|l|l|r|r|}
+            \hline
+            Coeficiente & Valor & \makecell{Probabilidade \\relativa (\%)}            & \makecell{Probabilidade   \\real (\%)}                        \\ \hline
+            Doença Renal Crônica & 0.4947658046512724  & 164.01 & 45.36 \\
+            Puérpera         & 0.4554332099218894  & 157.69 & 43.61 \\
+            Imunodeficiência/Imunodepressão               & 0.44086903459070775   & 155.41 & 42.98 \\
+            Doença Hepática Crônica     & 0.43111209550372803   & 153.90 & 42.56 \\
+            Diabetes mellitus                       & 0.3855162684195613  & 147.04 & 40.67 \\
+            Doença Hematológica Crônica                            & 0.3315345906093188  & 139.31 & 38.53 \\
+            Obesidade      & 0.30353342237041214  & 135.46 & 37.46 \\
+            Asma     & 0.20758009401090677  & 123.07 & 34.04 \\
+            Doença Neurológica Crônica                & 0.19574036293390837 & 121.62  & 33.64 \\
+            Outra Pneumatopatia Crônica   & 0.12989092233370036  & 113.87  & 31.49 \\
+            Síndrome de Down   & -0.14507414792834297  & 86.50  & 23.92 \\
+            Doença Cardiovascular Crônica   & -0.3530147635129998  & 70.26  & 19.43 \\ \hline
+        \end{tabular}
+        \caption{Coeficientes do modelo de regressão logística}
+        \label{tab:coef-lr}
+    }
+\end{table}
+
+De acordo com o intercepto na tabela~\ref{tab:int-lr} e aplicando a equação~\ref{eq:int-rl}, aproximadamente 27,66\% das pessoas internadas com COVID-19 sem nenhuma comorbidade não sobreviverão.
+Na tabela~\ref{tab:coef-lr}, ordenada pelo valor dos coeficientes de maneira decrescente, temos a probabilidade relativa, calculada com a equação~\ref{eq:prob-rl} e a probabilidade real, calculada multiplicando a probabilidade relativa pela probabilidade base, calculada pelo intercepto.
+Vemos que quase todas as comorbidades aumentam o risco de morte exceto duas: Síndrome de Down e Doença Cardiovascular Crônica.
+
+Algo que chama a atenção é o fato de pessoas com doenças cardiovasculares crônicas terem um menor risco de morte se comparado com quem não tem nenhuma comorbidade.
+Isto pode ser devido ao fato de pessoas com doenças cardiovasculares crônicas procurarem ajuda médica mais cedo devido às campanhas médicas presentes que indicam maior probabilidade de desenvolver a forma grave da doença.
+Como este trabalho utilizou dados de pessoas já hospitalizadas, não está sendo levado em conta as pessoas com comorbidades que tiveram sintomas leves ou assintomáticas.

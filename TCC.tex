@@ -1,0 +1,348 @@
+%
+% Exemplo genérico de uso da classe destufba.cls
+%
+% Se você não tem familiaridade com o LaTeX, este arquivo dá algumas orientações.
+% Para um aproveitamento melhor, sugere-se usar o livro LaTeX - A Document Preparation System,
+% de Leslie Lamport. Na Internet estão disponíveis também alguns milhares de tutorias.
+% O Departamento de Estatística oferece semestralmente um curso gratuito, fique atento.
+%
+% O símbolo % é um comentário de linha, então tudo que aparecer depois dele não é considerado
+% no texto final. Você pode limpar todos os comentários deste arquivo, depois que colocar os
+% dados corretos, sem prejuízo do texto final.
+%
+
+\documentclass[espec,ppgcdbd]{destufba}
+% Para usar o modelo, deve-se informar o curso e o tipo de documento e o tipo de documento que deve ser produzido.
+% Cursos:
+%   * código do curso   -- Usar o código do curso, usar a sigla do programa
+%                         quando se tratar de pós-graduação stricto sensu (ppgest
+%                         para o Programa de Pós-graduação em Matemática (Área de 				 
+%                         concentração - Estatística),por exemplo; 
+%                         para especialização, definir os campos
+%                         apropriadamente com o comando \course{nome-do-curso}
+%                         (sem o termo ``Especialização'') e \campus{nome-do-campus}.
+%   
+% Tipos de Documento:
+%   * tcc               -- Trabalhos de Conclusão de Curso
+%   * espec             -- Monografias de Especialização
+%   * mestrado          -- Dissertações de Mestrado (acadêmico)
+% 
+% Outras Opções:
+%   * english    -- para textos em inglês
+%   * openright  -- força início de capítulos em páginas ímpares (padrão da biblioteca)
+%   * oneside    -- desliga frente-e-verso
+%   * final      -- versão final do texto
+
+% Programas de pós-graduação com mais de uma área de concentração devem declarar explicitamente
+% a área de concentração da dissertação, por meio do comando
+%\renewcommand{\areacourse}{Sanidade Animal}
+
+\usepackage[T1]{fontenc}        % pacote para conj. de caracteres correto
+%\usepackage[latin1]{inputenc}   % pacote para acentuação
+\usepackage{graphicx}           % pacote para importar figuras
+\usepackage{times}              % pacote para usar fonte Adobe Times
+\usepackage{mathptmx}           % pacote usar fonte Adobe Times nas fórmulas
+\usepackage{makecell}
+\usepackage{pdfpages}
+
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}
+\usepackage[utf8]{inputenc}    % pacote para usar citações abnt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Titulo e autor do trabalho.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Uso de aprendizado de máquina para avaliar a influência das comorbidades no risco de óbito por COVID-19}
+
+\author{Feitosa}{Taian Fonseca}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Orientação (orientador é obrigatório; co-orientador é opcional)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\advisor[Prof.~Dr.]{Silva}{Allan Robert da}
+%\coadvisor[Prof.~Dr.]{Rebouças}{Luciano Oliveira}
+
+% Se o seu orientador ou co-orientador for mulher, acerte o nome:
+%\renewcommand{\advisorname}{Orientadora}
+%\renewcommand{\coadvisorname}{Co-orientadora}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Definições para registro na biblioteca e banca de apresentação do trabalho
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cutter{---}                                                        % número de catalogação da biblioteca, na
+%                                               versão final do trabalho;
+%                                               deixar em branco antes de produzir a versão %                                               final.
+
+\banca[Prof.~Dr.]{Henrique Gama Dore de Araújo}{Luiz}            % membro da banca de defesa (orientador não entra)
+\inst{Universidade Federal de Sergipe}                            % instituição do membro da banca
+
+\banca[Prof.~Dr.]{Jorge Canas Rodrigues}{Paulo}       % membro da banca de defesa
+\inst{Universidade Federal da Bahia}                            % instituição do membro da banca
+
+% \banca[Dr.]{definir}{A}                        % membro da banca de defesa
+% \inst{Universidade Federal da Bahia}                                      % instituição do membro da banca
+
+\defesa{02}{dezembro}{2022}                       % data da defesa - dia, mês e ano
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% A data deve ser a da defesa ou a da geração do documento, o que vier primeiro;
+% se nao especificada, são gerados mês e ano correntes. Use somente se for gerar
+% novamente o documento após a defesa.
+%\date{maio}{2001}
+
+% O local de realização do trabalho deve ser especificado
+% com o comando \location.
+\location{Salvador}{BA}
+
+%
+% Palavras-chave para o resumo (na língua do documento)
+%
+% Iniciar todas com a primeira legra maiúscula e as demais letras minúsculas,
+% exceto no caso de abreviaturas.
+%
+\keyword{COVID-19}
+\keyword{SRAG}
+\keyword{Comorbidades}
+\keyword{Aprendizado de máquina}
+\keyword{OPENDATASUS}
+
+\sloppy % para o texto não ficar esquisito quando se usar elementos muito compridos que não podem ser separados.
+
+% ---------------------------------------------------------------------------- %
+\graphicspath{{./figuras/}}             % caminho das figuras (recomendável)
+% ---------------------------------------------------------------------------- %
+
+%
+% Início do documento
+%
+
+\begin{document}
+
+%
+% Produção das folhas de rosto, da ficha catalográfica do documento e da folha de aprovação.
+% Se todos os dados acima foram preenchidos corretamente, as folhas de rosto devem sair no formato correto.
+%
+
+    \maketitle
+
+%
+% Dedicatoria (opcional)
+%
+
+    \begin{dedicatoria}
+        Dedico este trabalho a Ellen, o meu amor mais lindo mundo <3
+    \end{dedicatoria}
+
+%
+% Agradecimentos (opcional)
+%
+% Se você tiver muito a agradecer, pode usar um arquivo à parte e incluí-lo
+% no texto, por meio do comando \input{meus-agradecimenos}. O compilador
+% LaTeX buscará o arquivo meus-agradecimentos.tex e incluirá o texto do mesmo
+% neste local. Isso ajuda a tornar o arquivo principal do trabalho (este)
+% mais limpo, claro e conciso.
+%
+
+    \chapter*{Agradecimento}
+    Agradeço à UFBA ....
+
+%
+% Epígrafe (opcional)
+%
+    \begin{epigrafe}
+        ``Errar e aprender com os erros é humano. Aprender errando milhares de vezes por segundo, é inteligência artificial.''\\
+        --- Taian Feitosa
+    \end{epigrafe}
+
+%
+% Resumo na língua do documento (obrigatório). Deve ser escrito em um único parágrafo:
+%
+
+    \begin{abstract}
+        \emph{
+            O objetivo deste trabalho é usar algoritmos de aprendizado de máquina para avaliar a influência de comorbidades no risco de óbito por COVID-19. Os dados de pacientes com Síndrome Respiratória Aguda Grave (SRAG) foram extraídos do OPENDATASUS, portal do Ministério da Saúde do Brasil, no dia 12 de outubro de 2022. Sete algoritmos foram utilizados para avaliar os dados. Alguns deles, como o algoritmo de Regressão Logística, geram coeficientes que possuem interpretação matemática, que foram utilizados para avaliar e comparar o grau de risco de morte em pacientes com COVID-19, com e sem comorbidades.
+        }
+    \end{abstract}
+
+%
+% Resumo na outra língua - se o texto for em Português, o abstract é em Inglês e vice-versa -
+% como parâmetros devem ser passadas as palavras-chave na outra língua, separadas por vírgulas:
+%
+
+    \begin{englishabstract}{COVID-19, SARS, Comorbidities, Machine learning, OPENDATASUS}
+        \emph{
+            The objective of this work is to use machine learning algorithms to evaluate the influence of comorbidities on the risk of death from COVID-19. The data of patients with Severe Acute Respiratory Syndrome (SARS) were extracted from OPENDATASUS, the portal of the Brazilian Ministry of Health, on October 12, 2022. Seven algorithms were used to evaluate the data. Some of them, such as the Logistic Regression algorithm, generate coefficients that have mathematical interpretation, which were used to assess and compare the degree of risk of death in patients with COVID-19, with and without comorbidities.
+        }
+    \end{englishabstract}
+
+%
+% Lista de figuras
+%
+% Todas as figuras declaradas no texto dentro de um ambiente figure serão numeradas apropriadamente e
+% colocadas automaticamente nesta lista, com o número de página onde aparecem correto:
+%
+    % \listoffigures
+
+%
+% Lista de tabelas
+%
+% Todas as tabelas declaradas no texto dentro de um ambiente table serão numeradas apropriadamente e
+% colocadas automaticamente nesta lista, com o número de página onde aparecem correto:
+%
+
+    \listoftables
+
+% Listas de definições e teoremas, para quem usar o pacote formais, para trabalhos que possuam definições formais e teoremas
+
+%\listofdefinitions
+%\listoftheorems
+
+%
+% Lista de abreviaturas e siglas
+%
+% O parâmetro deve ser a abreviatura mais longa. Essa lista é opcional, mas é muito conveniente.
+% Só não abuse. use somente siglas consagradas. Se quiser economizar na escrita, use o comando
+% \newcommand{\MT}{Máquina de Turing} e use \MT sempre que quiser que o termo apareça completo.
+% Isso torna a leitura do texto mais fluente.
+    \begin{listofabbrv}{destufba}
+        % \item[ABNT]     Associação Brasileira de Normas Técnicas
+        % \item[ACM]      Association for Computing Machinery
+        % \item[IEEE]     Institute of Electrical and Electronics Engineers
+        % \item[IP]       Internet Protocol
+        % \item[RTP]      Real-Time Protocol
+        % \item[RSSF]     Rede de Sensores sem Fio
+        % \item[SIMD]     Single Instruction Multiple Data
+        \item[COVID] Coronavirus disease (doença do coronavírus)
+        \item[FM] Factorization Machines
+        \item[LASSO] Least Absolute Shrinkage and Selection Operator
+        \item[MLP] Multilayer Perceptron
+        \item[SRAG] Síndrome Respiratória Aguda Grave
+        \item[SVM] Support Vector Machines
+        \item[UFBA] Universidade Federal da Bahia
+        % \item[UFRGS]    Universidade Federal do Rio Grande do Sul
+    \end{listofabbrv}
+
+% Lista de símbolos
+    \begin{listofsymbols}{$\alpha\beta\pi\omega$}
+%        \item[$\sum{\frac{a}{b}}$] Somatório do produtório
+%        \item[$\alpha\beta\pi\omega$] Fator de inconstância do resultado
+        \item[$\beta$] Coeficiente da regressão logística
+        \item[$\prod$] Produtório
+    \end{listofsymbols}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Sumário - elemento obrigatório do trabalho - gerado automaticamente com
+%           o comando abaixo.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Aqui comeca o texto propriamente dito. O texto pode ser todo escrito neste
+% mesmo arquivo, mas pode-se separar o texto em diversos arquivos, que podem
+% ser incluídos com o comando \input{nome-do-arquivo} (inclui o arquivo com
+% nome nome-do-arquivo.tex), que deve estar no mesmo diretório do texto
+% principal. Se estiver em outro diretório, pode ser incluído também, usando
+% \input{Textos/nome-do-arquivo}. Dessa forma, o arquivo será buscado no
+% subdiretório Textos; se quiser usar caminhos na árvore de diretórios, use
+% \input{../Textos/nome-do-arquivo}, que procura o arquivo que está no diretório
+% Textos, um nível acima na estrutura.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% E aqui vai a parte principal:
+
+
+    \input{1-metodologia/1.0-metodologia.tex}
+    \input{2-fundamentos/2.0-fundamentos.tex}
+    \input{3-modelos/3.0-modelos.tex}
+    \input{4-analises/4.0-analises.tex}
+    \input{5-conclusao/5.0-conclusao.tex}
+%
+% \chapter{Metodologia}
+% \label{cap-metodologia}
+% \input{Metodologia}
+
+% \chapter{Estado da arte}
+% \label{cap-estado-da-arte}
+% \input{RevisaoBibliografica}
+
+% \chapter{A minha contribuição}
+% \label{cap-minha-contribuicao}
+% \input{MeuTrabalho}
+
+% \chapter{Prova de que a minha contribuição é válida}
+% \label{cap-minha-contribuicao}
+% \input{Resultados}
+
+% \chapter{Conclusão}
+% \label{cap-conclusao-e-trabalhos-futuros}
+% \input{Conclusao}
+
+%
+% O arquivo de formatação abntex2-alf.bst coloca todas as entradas no formato correto.
+%
+
+%    \nocite{icgt04}
+%    \nocite{nagl86set}
+%    \nocite{microsoft05Csharp}
+%    \nocite{meinke92universal}
+%    \nocite{marchi04verificacao}
+%    \nocite{biberstein97coopnthesis}
+%    \nocite{anderson96model}
+%    \nocite{alur01partial}
+%    \nocite{abramski94domain}
+%    \nocite{abadi97alogic}
+% \nocite{opendatasus2020}
+% \nocite{opendatasus20212022}
+
+    \bibliographystyle{abntex2-alf}
+    \bibliography{bibliografia}
+
+    % \chapter*{Glossário}
+
+    % O glossário é opcional.
+
+    \appendix
+
+
+    \chapter{Máquina}
+    \label{ch:maquina}
+
+    \begin{itemize}
+        \item Processador 11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz
+        \item RAM 16.0 GB
+        \item Windows 11 Pro Version 22H2
+    \end{itemize}
+
+    \annex
+
+
+    \chapter{Ficha de hospitalizados}
+    \label{ch:ficha-de-hospitalizados}
+
+    \includepdf[pages=-]{annex/ficha_srag_hospitalizado_23.03.2021.pdf}
+
+
+    \chapter{Dicionário de dados}
+    \label{ch:dicionario-de-dados}
+
+    \includepdf[pages=-]{annex/dicionario_de_dados_srag_hosp_17_02_2022.pdf}
+
+%
+% Finalização do documento. A partir desse comando qualquer coisa escrita será ignorada:
+%
+
+\end{document}

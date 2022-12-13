@@ -1,0 +1,30 @@
+\section{Perceptron multicamadas}
+\label{sec:mlp}
+
+Para treinar o modelo de perceptron multicamadas, a matriz de parâmetros na tabela~\ref{tab:param-mlp} foi utilizada.
+Pela equação~\ref{eq:qtd-modelos}, foram treinados 18 ($3 \times 6$) modelos.
+Os parâmetros selecionados estão presentes na tabela~\ref{tab:param-final-mlp}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro       & Valores                  \\ \hline
+        \textit{layers} & \makecell{(12, 5, 5, 2),\\(12, 10, 10, 2),\\(12, 20, 20, 2),\\(12, 5, 5, 5, 2),\\(12, 10, 10, 10, 2),\\(12, 20, 20, 20, 2)} \\ \hline
+    \end{tabular}
+    \caption{Parâmetros para treino do perceptron multicamadas}
+    \label{tab:param-mlp}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro       & Valores             \\ \hline
+        \textit{layers} & (12, 10, 10, 10, 2) \\ \hline
+    \end{tabular}
+    \caption{Parâmetros selecionados na validação cruzada do perceptron multicamadas}
+    \label{tab:param-final-mlp}
+\end{table}
+
+\textit{layers}: uma sequência com a quantidade de neurônios em cada camada.

@@ -1,0 +1,9 @@
+\section{Máquina de vetores de suporte}
+\label{sec:fun:lsvc}
+
+No aprendizado de máquinas, as máquinas de vetores de suporte (Support Vector Machines, SVMs em inglês) são modelos de aprendizado supervisionados com algoritmos de aprendizado associados que analisam dados para classificação e regressão.
+Dado um conjunto de exemplos de formação, cada um marcado como pertencendo a uma de duas categorias, um algoritmo de SVM constrói um modelo que atribui novos exemplos a uma ou outra categoria, tornando-o um classificador linear binário não probabilístico, embora existam métodos para utilizar SVM num cenário de classificação probabilístico.
+
+A SVM mapeia exemplos de formação para pontos no espaço de modo a maximizar a largura do intervalo entre as duas categorias.
+Novos exemplos são então mapeados para esse mesmo espaço e prevê-se que pertençam a uma categoria com base em que lado do intervalo caem.
+Além de realizar a classificação linear, as SVMs podem realizar eficientemente uma classificação não linear usando o que é chamado de \textit{kernel trick}, mapeando implicitamente suas entradas em espaços de características de dimensões mais altas~\cite{svms}.

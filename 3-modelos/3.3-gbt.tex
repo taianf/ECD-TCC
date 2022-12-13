@@ -1,0 +1,34 @@
+\section{\textit{Gradient boosting} em árvore}
+\label{sec:gbt}
+
+Para treinar o modelo de \textit{gradient boosting} em árvore, a matriz de parâmetros na tabela~\ref{tab:param-gbt} foi utilizada.
+Pela equação~\ref{eq:qtd-modelos}, foram treinados 27 ($3 \times 3 \times 3$) modelos.
+Os parâmetros selecionados estão presentes na tabela~\ref{tab:param-final-gbt}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro         & Valores    \\ \hline
+        \textit{maxIter}  & 10, 20, 30 \\
+        \textit{maxDepth} & 2, 6, 10   \\ \hline
+    \end{tabular}
+    \caption{Parâmetros para treino do \textit{gradient boosting} em árvore}
+    \label{tab:param-gbt}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro         & Valores \\ \hline
+        \textit{maxIter}  & 20      \\
+        \textit{maxDepth} & 6       \\ \hline
+    \end{tabular}
+    \caption{Parâmetros selecionados na validação cruzada do \textit{gradient boosting} em árvore}
+    \label{tab:param-final-gbt}
+\end{table}
+
+\textit{maxIter}: a quantidade máxima de iterações do algoritmo.
+
+\textit{maxDepth}: a profundidade máxima das árvores geradas.

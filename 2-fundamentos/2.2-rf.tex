@@ -1,0 +1,13 @@
+\section{Floresta Aleatória}
+\label{sec:fun:rf}
+
+Florestas aleatórias ou florestas de decisão aleatória é um método de aprendizado \textit{ensemble} para classificação, regressão e outras tarefas que opera construindo várias árvores de decisão em tempo de treinamento~\cite{hotimkam}.
+O aprendizado de árvore de decisão é uma abordagem de aprendizado supervisionado usada em estatística, mineração de dados e aprendizado de máquina~\cite{decisiontree}.
+Uma árvore é construída dividindo o conjunto fonte, que constitui o nó raiz da árvore, em subconjuntos – que constituem os filhos sucessores.
+Esse processo é repetido em cada subconjunto.
+A recursão é concluída quando o subconjunto em um nó tem todos os mesmos valores que a variável de destino, ou quando a divisão não agrega mais valor às previsões.
+
+Para tarefas de classificação, a saída da floresta aleatória é a classe selecionada pela maioria das árvores.
+Para tarefas de regressão, a previsão média das árvores individuais é retornada.
+Florestas de decisão aleatórias diminuem a chance de \textit{overfitting} das árvores de decisão ao seu conjunto de treinamento.
+As florestas aleatórias geralmente superam as árvores de decisão, mas sua precisão é menor do que o \textit{Gradient boosting} em árvore, visto na seção~\ref{sec:fun:gbt}.

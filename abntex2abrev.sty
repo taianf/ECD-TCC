@@ -131,7 +131,7 @@
 
 %para testar, coloca os resultados em forma mais explícita
 \newcommand{\TESTabrev}[1]{%
-\@ifundefined{@TR@#1}{pt(#1):\csname \@NBR#1\endcsname}{en(#1):\csname \@TR@#1\endcsname}}
+    \@ifundefined{@TR@#1}{pt(#1):\csname \@NBR#1\endcsname}{en(#1):\csname \@TR@#1\endcsname}}
 
 %controla como termina a abreviação
 \newcommand{\abrevending}{.}

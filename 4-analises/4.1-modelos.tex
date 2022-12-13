@@ -1,0 +1,128 @@
+\section{Comparativo entre modelos}
+\label{sec:comparativo-entre-modelos}
+
+Uma primeira análise a se fazer, é comparar o custo de treino de cada modelo.
+Todos os modelos foram treinados na mesma máquina, cujas especificações encontram-se no apêndice~\ref{ch:maquina}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|r|r|r|}
+        \hline
+        Modelo                               & Tempo (s) & Quantidade & Tempo/modelo \\
+        \hline
+        Regressão Logística                  & 1140      & 135        & 8.4          \\
+        Máquinas de fatoração                & 1317      & 135        & 9.8          \\
+        Floresta Aleatória                   & 1002      & 145        & 22.3         \\
+        Máquina de vetores de suporte        & 813       & 27         & 30.1         \\
+        \textit{Naïve Bayes}                 & 106       & 3          & 35.3         \\
+        \textit{Gradient boosting} em árvore & 2082      & 127        & 77.1         \\
+        Perceptron multicamadas              & 1759      & 18         & 97.7         \\
+        \hline
+    \end{tabular}
+    \caption{Tempo de treinamento dos modelos}
+    \label{tab:modelos-tempo}
+\end{table}
+
+Modelos mais simples levam menos tempo para ser treinados pois exigem menos recursos computacionais e são preferidos quando a eficiências entre diferentes modelos forem parecidas.
+Como vemos na tabela~\ref{tab:modelos-tempo} os modelos de regressão logística e máquinas de fatoração foram mais eficientes que os demais modelos, enquanto \textit{Gradient boosting} em árvore e Perceptron multicamadas tiveram um custo maior que os demais.
+
+\subsection{\textit{Accuracy}}
+\label{subsec:accuracy}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|r|c|}
+        \hline
+        Modelo                               & Tempo/modelo & \textit{Accuracy}  \\
+        \hline
+        \textit{Gradient boosting} em árvore & 77.1         & 0.6788676814045260 \\
+        Floresta Aleatória                   & 22.3         & 0.6787368124345655 \\
+        Máquina de vetores de suporte        & 30.1         & 0.6784046065877426 \\
+        Perceptron multicamadas              & 97.7         & 0.6780019328340179 \\
+        Máquinas de fatoração                & 9.8          & 0.6767838447290005 \\
+        Regressão Logística                  & 8.4          & 0.6764516388821776 \\
+        \textit{Naïve Bayes}                 & 35.3         & 0.6735221873238302 \\
+        \hline
+    \end{tabular}
+    \caption{\textit{Accuracy} dos modelos}
+    \label{tab:modelos-accuracy}
+\end{table}
+
+Na tabela~\ref{tab:modelos-accuracy} todos os modelos tem uma \textit{Accuracy} bem próximas.
+A diferença entre o melhor e o pior modelo é de 0.00534549408, ou 0.534549408\%.
+Vamos analisar as outras métricas para diferenciar melhor os modelos.
+
+\subsection{\textit{Precision}}
+\label{subsec:precision}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|r|c|}
+        \hline
+        Modelo                               & Tempo/modelo & \textit{Precision} \\
+        \hline
+        Perceptron multicamadas              & 97.7         & 0.6878171221735055 \\
+        Máquina de vetores de suporte        & 30.1         & 0.6876848138152023 \\
+        \textit{Gradient boosting} em árvore & 77.1         & 0.6872194787526914 \\
+        Floresta Aleatória                   & 22.3         & 0.6863533577950337 \\
+        Máquinas de fatoração                & 9.8          & 0.6833203199189651 \\
+        Regressão Logística                  & 8.4          & 0.6801860252670480 \\
+        \textit{Naïve Bayes}                 & 35.3         & 0.6735045664401927 \\
+        \hline
+    \end{tabular}
+    \caption{\textit{Precision} dos modelos}
+    \label{tab:modelos-precision}
+\end{table}
+
+Ao analisar a \textit{Precision} na tabela~\ref{tab:modelos-precision}, vê-se que a diferença entre o melhor e o pior modelo é de 0.01431255573 ou 1.431255573\%.
+Ainda uma diferença muito pequena.
+
+\subsection{\textit{Recall}}
+\label{subsec:recall}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|r|c|}
+        \hline
+        Modelo                               & Tempo/modelo & \textit{Recall}    \\
+        \hline
+        \textit{Naïve Bayes}                 & 35.3         & 0.9993717747363697 \\
+        Regressão Logística                  & 8.4          & 0.9800762844962979 \\
+        Máquinas de fatoração                & 9.8          & 0.9686784832847206 \\
+        Floresta Aleatória                   & 22.3         & 0.9624859771146511 \\
+        \textit{Gradient boosting} em árvore & 77.1         & 0.9595991324508264 \\
+        Máquina de vetores de suporte        & 30.1         & 0.9566075835763966 \\
+        Perceptron multicamadas              & 97.7         & 0.9550220626729489 \\
+        \hline
+    \end{tabular}
+    \caption{\textit{Recall} dos modelos}
+    \label{tab:modelos-recall}
+\end{table}
+
+Analisando o \textit{Recall} na tabela~\ref{tab:modelos-recall} vemos que todos os modelos tem um índice muito alto, maior que 95\%.
+O modelo \textit{Naïve Bayes} tem um valor muito próximo de 1, ou seja, ele consegue detectar quase todos os casos que são positivos.
+
+\subsection{\textit{F1 Score}}
+\label{subsec:f1-score}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|r|c|}
+        \hline
+        Modelo                               & Tempo/modelo & \textit{F1 Score}  \\
+        \hline
+        \textit{Naïve Bayes}                 & 35.3         & 0.8046995911042593 \\
+        Regressão Logística                  & 8.4          & 0.8030468299976713 \\
+        Máquinas de fatoração                & 9.8          & 0.8013537174640690 \\
+        Floresta Aleatória                   & 22.3         & 0.8012975773160572 \\
+        \textit{Gradient boosting} em árvore & 77.1         & 0.8008838509937083 \\
+        Máquina de vetores de suporte        & 30.1         & 0.8001551415666796 \\
+        Perceptron multicamadas              & 97.7         & 0.7996893826480128 \\
+        \hline
+    \end{tabular}
+    \caption{\textit{F1 Score} dos modelos}
+    \label{tab:modelos-f1}
+\end{table}
+
+E analisando o \textit{F1 Score}, que é uma métrica média entre \textit{Precision} e \textit{Recall}, o Naïve Bayes continua sendo o melhor modelo.
+O \textit{Recall} muito alto em todos os modelos, acaba influenciando o \textit{F1 Score} e a classificação dos modelos por \textit{Recall} tem a mesma ordem que a classificação por F1 Score.

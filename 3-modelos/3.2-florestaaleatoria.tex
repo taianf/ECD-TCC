@@ -1,0 +1,34 @@
+\section{Floresta Aleatória}
+\label{sec:rf}
+
+Para treinar a floresta aleatória, a matriz de parâmetros na tabela~\ref{tab:param-rf} foi utilizada.
+Pela equação~\ref{eq:qtd-modelos}, foram treinados 45 ($3 \times 3 \times 5$) modelos.
+Os parâmetros selecionados estão presentes na tabela~\ref{tab:param-final-rf}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro         & Valores           \\ \hline
+        \textit{numTrees} & 10, 20, 30        \\
+        \textit{maxDepth} & 5, 10, 15, 25, 30 \\ \hline
+    \end{tabular}
+    \caption{Parâmetros para treino da floresta aleatória}
+    \label{tab:param-rf}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro         & Valores \\ \hline
+        \textit{numTrees} & 20      \\
+        \textit{maxDepth} & 15      \\ \hline
+    \end{tabular}
+    \caption{Parâmetros selecionados na validação cruzada da floresta aleatória}
+    \label{tab:param-final-rf}
+\end{table}
+
+\textit{numTrees}: o número de árvores que devem compor a floresta aleatória.
+
+\textit{maxDepth}: a profundidade máxima das árvores geradas.

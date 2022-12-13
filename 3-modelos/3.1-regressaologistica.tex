@@ -1,0 +1,42 @@
+\section{Regressão Logística}
+\label{sec:lr}
+
+Para treinar o modelo de regressão logística, a matriz de parâmetros na tabela~\ref{tab:param-lr} foi utilizada.
+Pela equação~\ref{eq:qtd-modelos}, foram treinados 135 ($3 \times 3 \times 5 \times 3$) modelos de regressão logística.
+Os parâmetros selecionados estão presentes na tabela~\ref{tab:param-final-lr}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro                & Valores                   \\ \hline
+        \textit{regParam}        & 0.01, 0.02, 0.1           \\
+        \textit{elasticNetParam} & 0.0, 0.25, 0.5, 0.75, 1.0 \\
+        \textit{maxIter}         & 1, 2, 3                   \\ \hline
+    \end{tabular}
+    \caption{Parâmetros para treino da regressão logística}
+    \label{tab:param-lr}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro                & Valor \\ \hline
+        \textit{regParam}        & 0.1   \\
+        \textit{elasticNetParam} & 0.0   \\
+        \textit{maxIter}         & 2     \\ \hline
+    \end{tabular}
+    \caption{Parâmetros selecionados na validação cruzada da regressão logística}
+    \label{tab:param-final-lr}
+\end{table}
+
+\textit{regParam}: é o parâmetro de regularização.
+A regularização serve para prevenir \textit{overfitting}, penalizando modelos com valores de coeficiente muito altos.
+Coeficientes muito altos podem ocorrer quando há algum parâmetro raro que força uma correlação muito alta com a variável a ser estimada.
+
+\textit{elasticNetParam}: é o parâmetro de proporção da \textit{Elastic-net}.
+Este parâmetro fica entres os limites 0 e 1.
+Quando o valor é 0 a penalidade aplicada é do tipo L2~(\textit{Ridge}) e quando o valor é 1 a penalidade aplicada é do tipo L1~(\textit{LASSO}).
+
+\textit{maxIter}: a quantidade máxima de iterações do algoritmo.

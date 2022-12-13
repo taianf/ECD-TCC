@@ -1,0 +1,26 @@
+\section{Regressão Logística}
+\label{sec:fun:lr}
+
+A regressão logística é uma técnica estatística que visa produzir, a partir de um conjunto de observações, um modelo que permita a previsão de valores tomados por uma variável categórica, muitas vezes binária, a partir de uma série de variáveis explicativas contínuas ou binárias.
+É um caso especial de modelos Lineares Generalizados que prevê a probabilidade dos resultados~\cite{glmarticle}.
+
+A regressão logística tem a vantagem de ter uma interpretação prática para os coeficientes, onde eles representam a probabilidade de um evento ocorrer em função de outros fatores.
+Essa interpretação pode ajudar a descobrir quais variáveis são relevantes para o modelo e quais não são.
+Por ser um modelo simples de treinar e possuir coeficientes interpretáveis, é frequentemente utilizado como base para comparação da eficiência de outros modelos treinados.
+
+A interpretação dos coeficientes se dá pela equação~\ref{eq:prob-rl}.
+Coeficientes $\beta$ positivos indicam que a probabilidade da classe avaliada aumenta quando o fator é positivo enquanto coeficientes $\beta$ negativos indicam que a probabilidade diminui.
+
+\begin{equation}
+    \label{eq:prob-rl}
+    p_i = e^{\beta_i}
+\end{equation}
+
+Por exemplo, um coeficiente $\beta_i = 0,1$ gera um $p_i = 1,105171$, significando que quando o fator $i$ está presente, a probabilidade da classe alvo ser positiva é aproximadamente 10,5171\% maior se comparado a quando o fator $i$ está ausente.
+
+O intercepto $\beta_0$ representa a probabilidade da classe alvo ser positiva quando todos os coeficientes são 0 e seu cálculo se dá pela equação~\ref{eq:int-rl}.
+
+\begin{equation}
+    \label{eq:int-rl}
+    p = \frac{e^{\beta_0}}{(1 + e^{\beta_0}) }
+\end{equation}

@@ -1,0 +1,43 @@
+\chapter{Metodologia}
+\label{ch:metodologia}
+
+Para alcançar o objetivo deste trabalho, que consiste em analisar o risco de morte em pacientes hospitalizados com COVID-19, conforme as comorbidades, utilizou-se alguns algoritmos de aprendizado de máquina para tentar predizer se o paciente com COVID-19 sobreviverá ou não a esta doença.
+Os dados dos hospitalizados foram obtidos no portal OPENDATASUS~\cite{opendatasus2020,opendatasus20212022} no dia 12 de outubro.
+
+As comorbidades catalogadas pelo OPENDATASUS e utilizadas neste trabalho foram:
+
+\begin{itemize}
+    \item Doença Cardiovascular Crônica
+    \item Doença Hematológica Crônica
+    \item Síndrome de Down
+    \item Doença Hepática Crônica
+    \item Asma
+    \item Diabetes mellitus
+    \item Doença Neurológica Crônica
+    \item Outra Pneumatopatia Crônica
+    \item Imunodeficiência ou Imunodepressão
+    \item Doença Renal Crônica
+    \item Obesidade
+\end{itemize}
+
+Os dados disponibilizados foram filtrados para apenas os casos confirmados como COVID-19 e com evolução desconhecida foram descartados.
+Como alguns algoritmos são especialmente sensíveis quando a classe de avaliação é desbalanceada, e como a base possui mais curados do que óbitos, foi realizado um \textit{undersampling}, foram sorteados aleatoriamente uma quantidade de curados dentre a base de entrada para que os dados de treino tenha uma quantidade semelhante de dados entre as classes.
+
+Os algoritmos foram treinados com Apache Spark, ``um motor multilinguagem para executar engenharia de dados, ciências de dados e aprendizado de máquina em máquinas de nó único ou `clusters'\,''~\cite{apachespark}.
+O Spark permite realizar validação cruzada para treinar o modelo e utilizar uma matriz de parâmetros para selecionar automaticamente o melhor conjunto de parâmetros, através do avaliador selecionado~\cite{apachesparkcv}.
+Dentre os algoritmos implementados no Spark~\cite{apachesparkml}, este trabalho testou os seguintes:
+
+\begin{itemize}
+    \item Regressão logística
+    \item Floresta aleatória
+    \item \textit{Gradient boosting} em árvore
+    \item Perceptron multicamadas
+    \item Máquina de vetores de suporte
+    \item \textit{Naïve Bayes}
+    \item Máquinas de Fatoração
+\end{itemize}
+
+A regressão logística calcula valores que possuem interpretação matemática para modelar a probabilidade de um evento ocorrer, conforme a presença de outro.
+Por isso, esses valores serão utilizados para ranquear as comorbidades com maior influência no risco de morte.
+As matrizes de parâmetros serão abordadas em~\ref{ch:modelos}.
+O código utilizado nesse trabalho, feito na linguagem Scala, está disponível no repositório do GitHub \href{https://github.com/taianf/ECD-TCC-Dados}~\cite{githubtcc}.

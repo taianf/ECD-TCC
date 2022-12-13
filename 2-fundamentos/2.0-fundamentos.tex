@@ -1,0 +1,43 @@
+\chapter{Fundamentos}
+\label{ch:fundamentos}
+
+O aprendizado de máquinas (Machine Learning, em inglês) é um campo de estudo dedicado à compreensão e construção de métodos que `aprendem', ou seja, métodos que usam os dados para melhorar o desempenho em algum conjunto de tarefas~\cite{mitcheltom}.
+Os algoritmos de aprendizado de máquinas constroem um modelo baseado em dados de amostra, conhecidos como dados de treino, a fim de fazer previsões ou tomar decisões sem serem explicitamente programados para isso~\cite{simonphill}.
+
+Os métodos de aprendizado de máquina são classificados basicamente em três tipos~\cite{russellstuart}:
+
+\begin{itemize}
+    \item Aprendizado supervisionado:
+    \subitem Exemplos de entradas e saídas pré-classificadas são apresentados ao computador.
+    O objetivo é aprender uma regra geral que mapeia entradas para saídas.
+
+    \item Aprendizado não supervisionado:
+    \subitem Nenhum tipo de classificação é dado ao algoritmo de aprendizado, deixando-o sozinho para encontrar relacionamentos nas entradas fornecidas.
+    O aprendizado não supervisionado pode ser um objetivo em si, descobrir novos padrões nos dados, ou um meio para um fim.
+
+    \item Aprendizado por reforço:
+    \subitem Um programa de computador interage com um ambiente dinâmico, no qual o programa deve realizar um determinado objetivo (por exemplo, dirigir um veículo).
+    O feedback sobre recompensas e punições é fornecido ao programa à medida que ele navega no espaço do problema.
+    Outro exemplo de aprendizado por reforço é aprender a jogar um determinado jogo apenas jogando contra um oponente.
+\end{itemize}
+
+Existem algumas técnicas para juntar vários modelos em um só, como \textit{ensemble} e \textit{boosting}.
+
+Os métodos \textit{ensemble} utilizam múltiplos algoritmos de aprendizado para obter um melhor desempenho preditivo do que o que poderia ser obtido apenas com qualquer um dos algoritmos de aprendizado constituintes.
+Ao contrário de um \textit{ensemble} estatístico em mecânica estatística, que é geralmente infinito, um \textit{ensemble} de aprendizado de máquinas consiste apenas num conjunto finito concreto de modelos alternativos, mas tipicamente permite que exista uma estrutura muito mais flexível entre essas alternativas~\cite{ensemble}.
+
+\textit{Boosting} é um método de \textit{ensemble} que combina um conjunto de modelos fracos num modelo forte para minimizar erros de treino.
+No \textit{boosting}, uma amostra aleatória de dados é selecionada, treinada com um modelo e depois treinada sequencialmente, isto é, cada modelo tenta compensar as fraquezas do seu predecessor.
+Com cada iteração as regras fracas de cada classificador individual são combinadas para formar uma regra de previsão forte~\cite{boosting}.
+
+Os dados deste trabalho já estão pré-classificados, portanto foram utilizados alguns modelos de aprendizado supervisionado.
+Os modelos neste trabalho e citados no capítulo~\ref{ch:metodologia} foram escolhidos pois já tem algoritmos de treinamento presentes no Apache Spark.
+Para mais detalhes sobre a implementação dos modelos no Apache Spark é possível conferir a documentação oficial~\cite{apachesparkml}.
+
+\input{2-fundamentos/2.1-rl}
+\input{2-fundamentos/2.2-rf}
+\input{2-fundamentos/2.3-gbt}
+\input{2-fundamentos/2.4-mlp}
+\input{2-fundamentos/2.5-lsvc}
+\input{2-fundamentos/2.6-nb}
+\input{2-fundamentos/2.7-fm}

@@ -1,14 +1,14 @@
 %==============================================================================
-% destufba - classe de documento com padrıes para documentos do Departamento de 
+% destufba - classe de documento com padr√µes para documentos do Departamento de 
 %            Estatistica da UFBA
 %
-% Este documento foi baseado no documento construÌdo pelo UFRGS TeX Users Group,
-% Grupo de Usu·rios TeX da UFRGS, UNIPAMPA e adaptado para atender ao manual de normalizaÁ„o
-% do Departamento de EstatÌstica da UFBA, pelo Prof. Jalmar Manuel Farfan Carrasco.
+% Este documento foi baseado no documento constru√≠do pelo UFRGS TeX Users Group,
+% Grupo de Usu√°rios TeX da UFRGS, UNIPAMPA e adaptado para atender ao manual de normaliza√ß√£o
+% do Departamento de Estat√≠stica da UFBA, pelo Prof. Jalmar Manuel Farfan Carrasco.
 %
-% Este arquivo È distribuÌdo por meio da licenÁa GNU Public License.
+% Este arquivo √© distribu√≠do por meio da licen√ßa GNU Public License.
 %
-% N„o nos responsabilizamos por manter este documento. Sugestıes e atualizaÁıes
+% N√£o nos responsabilizamos por manter este documento. Sugest√µes e atualiza√ß√µes
 % podem ser enviadas para carrasco.jalmar@ufba.br.
 %
 %==============================================================================
@@ -16,7 +16,7 @@
 
 %==============================================================================
 %
-% IdentificaÁ„o deste documento
+% Identifica√ß√£o deste documento
 %
 %==============================================================================
 
@@ -25,14 +25,14 @@
 
 %==============================================================================
 %
-% InformaÁıes sobre cursos e titulaÁıes
+% Informa√ß√µes sobre cursos e titula√ß√µes
 %
 %==============================================================================
 
 \newcommand{\UFBA}{Universidade Federal da Bahia}
 
-\newcommand{\course}[1]{\gdef\@course{#1}}                  % nome do curso, sem modalidade - no caso de pÛs-graduaÁ„o, com nome completo
-\newcommand{\modalidade}[1]{\gdef\@modalidade{#1}}          % somente para a graduaÁ„o (Licenciatura, Bacharelado, Curso Superior de Tecnologia)
+\newcommand{\course}[1]{\gdef\@course{#1}}                  % nome do curso, sem modalidade - no caso de p√≥s-gradua√ß√£o, com nome completo
+\newcommand{\modalidade}[1]{\gdef\@modalidade{#1}}          % somente para a gradua√ß√£o (Licenciatura, Bacharelado, Curso Superior de Tecnologia)
 \newcommand{\campus}[1]{\gdef\@campus{#1}}                  % nome do Campus
 \newcommand{\advisorname}{Orientador}%
 \newcommand{\coadvisorname}{Co-orientador}%
@@ -47,12 +47,12 @@
 
 \DeclareOption{tcc}{%
     \newcommand{\titlepagespecificinfo}{\tccspecificinfo}
-    \def\@cipspecificinfo{\tccname\ (GraduaÁ„o)}
+    \def\@cipspecificinfo{\tccname\ (Gradua√ß√£o)}
     \def\textapproval{\tccapproval}
 }
 \DeclareOption{espec}{%
     \newcommand{\titlepagespecificinfo}{\especspecificinfo}
-    \def\@cipspecificinfo{\especname\ (EspecializaÁ„o)}
+    \def\@cipspecificinfo{\especname\ (Especializa√ß√£o)}
     \def\textapproval{\especapproval}
 }
 \DeclareOption{mestrado}{%
@@ -71,48 +71,48 @@
 
 %==============================================================================
 %
-% DefiniÁıes para os cursos de graduaÁ„o
+% Defini√ß√µes para os cursos de gradua√ß√£o
 %
 %==============================================================================
 
 \DeclareOption{est}{%
-  \course{EstatÌstica}
-  \modalidade{Bacharelado}
-  \campus{Salvador}
-	\providecommand{\titulacaoEm}{Bacharel em EstatÌstica}
+    \course{Estat√≠stica}
+    \modalidade{Bacharelado}
+    \campus{Salvador}
+    \providecommand{\titulacaoEm}{Bacharel em Estat√≠stica}
 }
 
 %==============================================================================
 %
-% DefiniÁıes para os cursos de pÛs-graduaÁ„o
+% Defini√ß√µes para os cursos de p√≥s-gradua√ß√£o
 %
 %==============================================================================
 
 \DeclareOption{ppgest}{%
-    \course{Programa de PÛs-GraduaÁ„o em Matem·tica}
-    \providecommand{\areacourse}{EstatÌstica}
-    \providecommand{\titulacaoEm}{Matem·tica (¡rea: EstatÌstica)}
+    \course{Programa de P√≥s-Gradua√ß√£o em Matem√°tica}
+    \providecommand{\areacourse}{Estat√≠stica}
+    \providecommand{\titulacaoEm}{Matem√°tica (√Årea: Estat√≠stica)}
     \campus{Salvador}
 }
 
 \DeclareOption{ppgcdbd}{%
-    \course{Programa de PÛs-GraduaÁ„o em CiÍncia de Dados e Big Data}
+    \course{Programa de P√≥s-Gradua√ß√£o em Ci√™ncia de Dados e Big Data}
     \providecommand{\areacourse}{}
-    \providecommand{\titulacaoEm}{Especialista em CiÍncia de Dados e Big Data}
+    \providecommand{\titulacaoEm}{Especialista em Ci√™ncia de Dados e Big Data}
     \campus{Salvador}
 }
 
 %==============================================================================
 %
-% Outros documentos necess·rios para a produÁ„o dos documentos
+% Outros documentos necess√°rios para a produ√ß√£o dos documentos
 %
 %==============================================================================
 
-\destufba@novodoc{formais} 						% pacote para definiÁıes formais - definiÁıes, teoremas, provas, etc.
+\destufba@novodoc{formais}                        % pacote para defini√ß√µes formais - defini√ß√µes, teoremas, provas, etc.
 
 %==============================================================================
 %
-% DeclaraÁıes de lÌngua e estrutura base dos documentos
+% Declara√ß√µes de l√≠ngua e estrutura base dos documentos
 %
 %==============================================================================
 
@@ -125,7 +125,7 @@
 
 %==============================================================================
 %
-% Inclus„o de opÁıes da classe 'report' e outros pacotes e arquivos
+% Inclus√£o de op√ß√µes da classe 'report' e outros pacotes e arquivos
 %
 %==============================================================================
 
@@ -139,8 +139,8 @@
 \input{brazilian.babel}
 \input{english.babel}
 \if@english
-        \selectlanguage{english}
-        \AtBeginDocument{\selectlanguage{english}}
+\selectlanguage{english}
+\AtBeginDocument{\selectlanguage{english}}
 \fi
 \RequirePackage{lastpage}
 \RequirePackage{indentfirst}
@@ -155,48 +155,48 @@
 \settocfeature[toc][0]{entryhook}{\bfseries\uppercase}
 \settocfeature[toc][1]{entryhook}{\bfseries}
 \settocstylefeature{pagenumberbox}{\pnbox}
-\settocfeature[lof][1]{entryhook}{\figurename\hspace{0.2em}} % valor calculado no olho. Deveria ser um espaÁo de tamanho fixo, mas ~ tem tamanho vari·vel
+\settocfeature[lof][1]{entryhook}{\figurename\hspace{0.2em}} % valor calculado no olho. Deveria ser um espa√ßo de tamanho fixo, mas ~ tem tamanho vari√°vel
 \settocfeature[lot][1]{entryhook}{\tablename\hspace{0.2em}}
 
 \RequirePackage[%
-        bookmarksnumbered=true,
-        breaklinks=true,
-        unicode=true,
+    bookmarksnumbered=true,
+    breaklinks=true,
+    unicode=true,
 %
-        colorlinks=true,
-        anchorcolor=black,
-        citecolor=black,
-        filecolor=black,
-        linkcolor=black,
-        urlcolor=black
+    colorlinks=true,
+    anchorcolor=black,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
 ]{hyperref}[2009/10/09]
 \RequirePackage[all]{hypcap}
 
 \ifxetex
-  \usepackage{tgtermes}
+\usepackage{tgtermes}
 \else
-  \usepackage{times}              % pacote para usar fonte Adobe Times
-  \RequirePackage[T1]{fontenc}
+\usepackage{times}              % pacote para usar fonte Adobe Times
+\RequirePackage[T1]{fontenc}
 \fi
 
 \if@noabntcite
 \else
 \RequirePackage[
-    % Habilita o uso de citaÁıes no formato autor-data.
-	alf,
-	% O modelo da UFRGS requer que os t√≠tulos dos trabalhos estejam em negrito.
-    % Isso √© opcional na norma ABNT (que permite que seja usado it√°lico) e
-    % n√£o √© o padr√£o do abntex2.
+% Habilita o uso de cita√ß√µes no formato autor-data.
+    alf,
+% O modelo da UFRGS requer que os t√É¬≠tulos dos trabalhos estejam em negrito.
+% Isso √É¬© opcional na norma ABNT (que permite que seja usado it√É¬°lico) e
+% n√É¬£o √É¬© o padr√É¬£o do abntex2.
     abnt-emphasize=bf
 ]{abntex2cite}
 \fi
 
-% espaÁamento entre as linhas
+% espa√ßamento entre as linhas
 \newcommand{\setlinespacing}{\setstretch{1.415}}
 \setlinespacing
 
-% estes valores est„o no segundo par·grafo da introduÁ„o dos documentos da biblioteca e, portanto, est√£o corretos
-% a numera√ß√£o deve estar a 20mm do topo, logo headsep=30mm-20mm = 10mm
+% estes valores est√£o no segundo par√°grafo da introdu√ß√£o dos documentos da biblioteca e, portanto, est√É¬£o corretos
+% a numera√É¬ß√É¬£o deve estar a 20mm do topo, logo headsep=30mm-20mm = 10mm
 \RequirePackage[top=30mm,bottom=20mm,left=30mm,right=30mm,headsep=10mm]{geometry}
 %\RequirePackage{calc}
 
@@ -206,83 +206,131 @@
 % Margens do texto
 %==============================================================================
 
-% indenta√ß√£o dos par√°grafos (medido no olho)
+% indenta√É¬ß√É¬£o dos par√É¬°grafos (medido no olho)
 \setlength{\parindent}{3em}
 \AtBeginDocument{\setlength{\parskip}{0mm}}
 
 %==============================================================================
-% Numera√ß√£o das p√°ginas
+% Numera√É¬ß√É¬£o das p√É¬°ginas
 %==============================================================================
 \def\ps@iiufrgs{
-        \let\@oddfoot\@empty
-        \let\@evenfoot\@empty
-        \def\@evenhead{{\small\thepage}}
-        \def\@oddhead{\hspace*{\fill}{\small\thepage}}
+    \let\@oddfoot\@empty
+    \let\@evenfoot\@empty
+    \def\@evenhead{{\small\thepage}}
+    \def\@oddhead{\hspace*{\fill}{\small\thepage}}
 }
 \pagestyle{empty}
 \let\ps@plain\ps@empty
 
 %==============================================================================
-% DefiniÁ„o de autor(es), orientador e co-orientador
+% Defini√ß√£o de autor(es), orientador e co-orientador
 %==============================================================================
 \newcounter{ii@authorcount}
 \renewcommand{\author}[2]{
-        \addtocounter{ii@authorcount}{1}
-        \expandafter\gdef\csname @author\alph{ii@authorcount}last\endcsname{#1}
-        \expandafter\gdef\csname @author\alph{ii@authorcount}first\endcsname{#2}
-        \expandafter\gdef\csname @author\alph{ii@authorcount}\endcsname{#2 #1}
+    \addtocounter{ii@authorcount}{1}
+    \expandafter\gdef\csname @author\alph{ii@authorcount}last\endcsname{#1}
+    \expandafter\gdef\csname @author\alph{ii@authorcount}first\endcsname{#2}
+    \expandafter\gdef\csname @author\alph{ii@authorcount}\endcsname{#2 #1}
 }
 \DeclareRobustCommand{\advisor}[3][]{
-        \gdef\@advisorlast{#2}
-        \gdef\@advisorfirst{#3}
-        \gdef\@advisor{#1~#3 #2}
+    \gdef\@advisorlast{#2}
+    \gdef\@advisorfirst{#3}
+    \gdef\@advisor{#1~#3 #2}
 }
 \DeclareRobustCommand{\coadvisor}[3][]{
-        \gdef\@coadvisorlast{#2}
-        \gdef\@coadvisorfirst{#3}
-        \gdef\@coadvisor{#1~#3 #2}
+    \gdef\@coadvisorlast{#2}
+    \gdef\@coadvisorfirst{#3}
+    \gdef\@coadvisor{#1~#3 #2}
 }
 
 %==============================================================================
-% DefiniÁ„o dos membros da banca e suas instituiÁıes
+% Defini√ß√£o dos membros da banca e suas institui√ß√µes
 %==============================================================================
 \newcounter{ii@bancacount}
 \newcounter{ii@instcount}
 
 \newcommand{\banca}[3][]{
-        \addtocounter{ii@bancacount}{1}
-        \expandafter\gdef\csname @banca\alph{ii@bancacount}last\endcsname{#1}
-        \expandafter\gdef\csname @banca\alph{ii@bancacount}first\endcsname{#2}
-        \expandafter\gdef\csname @banca\alph{ii@bancacount}\endcsname{#1 #3 #2}
+    \addtocounter{ii@bancacount}{1}
+    \expandafter\gdef\csname @banca\alph{ii@bancacount}last\endcsname{#1}
+    \expandafter\gdef\csname @banca\alph{ii@bancacount}first\endcsname{#2}
+    \expandafter\gdef\csname @banca\alph{ii@bancacount}\endcsname{#1 #3 #2}
 }
 
 \newcommand{\inst}[1]{
-        \addtocounter{ii@instcount}{1}
-        \expandafter\gdef\csname @inst\alph{ii@instcount}\endcsname{#1}
+    \addtocounter{ii@instcount}{1}
+    \expandafter\gdef\csname @inst\alph{ii@instcount}\endcsname{#1}
 }
 
 %==============================================================================
-% DefiniÁ„o das palavras-chave (max. 10)
+% Defini√ß√£o das palavras-chave (max. 10)
 %==============================================================================
 \newcounter{kwcounter}
 \newcommand{\keyword}[1]{
-        \addtocounter{kwcounter}{1}
-        \expandafter\gdef\csname keyw\alph{kwcounter}\endcsname{#1}
+    \addtocounter{kwcounter}{1}
+    \expandafter\gdef\csname keyw\alph{kwcounter}\endcsname{#1}
 }
 \newcommand{\@cipkw}{%
-        \@ifundefined{keywa}{}{1.~\expandafter\MakeUppercase\keywa\@. }%
-        \@ifundefined{keywb}{}{2.~\expandafter\MakeUppercase\keywb\@. }%
-        \@ifundefined{keywc}{}{3.~\expandafter\MakeUppercase\keywc\@. }%
-        \@ifundefined{keywd}{}{4.~\expandafter\MakeUppercase\keywd\@. }%
-        \@ifundefined{keywe}{}{5.~\expandafter\MakeUppercase\keywe\@. }%
-        \@ifundefined{keywf}{}{6.~\expandafter\MakeUppercase\keywf\@. }%
-        \@ifundefined{keywg}{}{7.~\expandafter\MakeUppercase\keywg\@. }%
-        \@ifundefined{keywh}{}{8.~\expandafter\MakeUppercase\keywh\@. }%
-        \@ifundefined{keywi}{}{9.~\expandafter\MakeUppercase\keywi\@. }%
-        \@ifundefined{keywj}{}{10.~\expandafter\MakeUppercase\keywj\@. }%
+    \@ifundefined{keywa}{}{1.~\expandafter\MakeUppercase\keywa\@. }%
+    \@ifundefined{keywb}{}{2.~\expandafter\MakeUppercase\keywb\@. }%
+    \@ifundefined{keywc}{}{3.~\expandafter\MakeUppercase\keywc\@. }%
+    \@ifundefined{keywd}{}{4.~\expandafter\MakeUppercase\keywd\@. }%
+    \@ifundefined{keywe}{}{5.~\expandafter\MakeUppercase\keywe\@. }%
+    \@ifundefined{keywf}{}{6.~\expandafter\MakeUppercase\keywf\@. }%
+    \@ifundefined{keywg}{}{7.~\expandafter\MakeUppercase\keywg\@. }%
+    \@ifundefined{keywh}{}{8.~\expandafter\MakeUppercase\keywh\@. }%
+    \@ifundefined{keywi}{}{9.~\expandafter\MakeUppercase\keywi\@. }%
+    \@ifundefined{keywj}{}{10.~\expandafter\MakeUppercase\keywj\@. }%
 }
 \newcommand{\@abstractkw}{%
-        \@ifundefined{keywa}{}{\expandafter\MakeUppercase\keywa}%
+    \@ifundefined{keywa}{}{\expandafter\MakeUppercase\keywa}%
+    \@ifundefined{keywb}{}{. \keywb}%
+    \@ifundefined{keywc}{}{. \keywc}%
+    \@ifundefined{keywd}{}{. \keywd}%
+    \@ifundefined{keywe}{}{. \keywe}%
+    \@ifundefined{keywf}{}{. \keywf}%
+    \@ifundefined{keywg}{}{. \keywg}%
+    \@ifundefined{keywh}{}{. \keywh}%
+    \@ifundefined{keywi}{}{. \keywi}%
+    \@ifundefined{keywj}{}{. \keywj}%
+}
+
+%==============================================================================
+% Redefini√ß√£o da data (para ter m√™s e ano separados)
+%==============================================================================
+\renewcommand{\date}[2]{
+    \gdef\@publmonth{#1}
+    \gdef\@publyear{#2}%
+}
+\date{\monthname}{\number\year}
+
+%==============================================================================
+% Defini√ß√£o padr√£o da folha de rosto.
+% Os dados espec√≠ficos do tipo de trabalho (disserta√ß√£o) s√£o
+% informados definindo-se o comando \titlepagespecificinfo. Veja os
+% arquivos .def inclu√≠dos com a classe.
+%==============================================================================
+\newlength{\titlepagewinwidth}\setlength{\titlepagewinwidth}{95mm}
+\newlength{\titlepagewinheight}\setlength{\titlepagewinheight}{64mm}
+\newlength{\titlepagewinvoffset}\setlength{\titlepagewinvoffset}{112mm}
+\newlength{\approvalpagewinvoffset}\setlength{\approvalpagewinvoffset}{30mm}
+\newlength{\bancapagewinvoffset}\setlength{\bancapagewinvoffset}{40mm}
+
+\newcommand{\location}[2]{
+    \gdef\@city{#1}
+    \gdef\@state{#2}
+}
+\renewcommand{\maketitle}{%
+    \setstretch{0.92}
+    \hypersetup{%
+        pdftitle={\@title},%
+        pdfauthor={%
+        \@authora%
+        \@ifundefined{@authorb}{}{, \@authorb}%
+        \@ifundefined{@authorc}{}{, \@authorc}%
+        \@ifundefined{@authord}{}{, \@authord}%
+        },%
+        pdfkeywords={%
+        \@ifundefined{keywa}{}{\keywa}%
         \@ifundefined{keywb}{}{. \keywb}%
         \@ifundefined{keywc}{}{. \keywc}%
         \@ifundefined{keywd}{}{. \keywd}%
@@ -292,203 +340,155 @@
         \@ifundefined{keywh}{}{. \keywh}%
         \@ifundefined{keywi}{}{. \keywi}%
         \@ifundefined{keywj}{}{. \keywj}%
-}
-
-%==============================================================================
-% RedefiniÁ„o da data (para ter mÍs e ano separados)
-%==============================================================================
-\renewcommand{\date}[2]{
-        \gdef\@publmonth{#1}
-        \gdef\@publyear{#2}%
-}
-\date{\monthname}{\number\year}
-
-%==============================================================================
-% DefiniÁ„o padr„o da folha de rosto.
-% Os dados especÌficos do tipo de trabalho (dissertaÁ„o) s„o
-% informados definindo-se o comando \titlepagespecificinfo. Veja os
-% arquivos .def incluÌdos com a classe.
-%==============================================================================
-\newlength{\titlepagewinwidth}\setlength{\titlepagewinwidth}{95mm}
-\newlength{\titlepagewinheight}\setlength{\titlepagewinheight}{64mm}
-\newlength{\titlepagewinvoffset}\setlength{\titlepagewinvoffset}{112mm}
-\newlength{\approvalpagewinvoffset}\setlength{\approvalpagewinvoffset}{30mm}
-\newlength{\bancapagewinvoffset}\setlength{\bancapagewinvoffset}{40mm}
-
-\newcommand{\location}[2]{
-        \gdef\@city{#1}
-        \gdef\@state{#2}
-}
-\renewcommand{\maketitle}{%
-  \setstretch{0.92}
-  \hypersetup{%
-    pdftitle={\@title},%
-    pdfauthor={%
-      \@authora%
-      \@ifundefined{@authorb}{}{, \@authorb}%
-      \@ifundefined{@authorc}{}{, \@authorc}%
-      \@ifundefined{@authord}{}{, \@authord}%
-    },%
-    pdfkeywords={%
-      \@ifundefined{keywa}{}{\keywa}%
-      \@ifundefined{keywb}{}{. \keywb}%
-      \@ifundefined{keywc}{}{. \keywc}%
-      \@ifundefined{keywd}{}{. \keywd}%
-      \@ifundefined{keywe}{}{. \keywe}%
-      \@ifundefined{keywf}{}{. \keywf}%
-      \@ifundefined{keywg}{}{. \keywg}%
-      \@ifundefined{keywh}{}{. \keywh}%
-      \@ifundefined{keywi}{}{. \keywi}%
-      \@ifundefined{keywj}{}{. \keywj}%
+        }%
     }%
-  }%
-  \begin{titlepage}
-      \thetitlepage
-  \end{titlepage}%
-  \clearpage
-  \setcounter{page}{2}%
-  %\@ifundefined{@cipspecificinfo}{\@makenominatapage}{\@makecippage}
-  \@ifundefined{@cipspecificinfo}{}{\@makecippage}
-  \setlinespacing
-  \@ifundefined{@bancaa}{}{\folhadeaprovacao}%
+    \begin{titlepage}
+        \thetitlepage
+    \end{titlepage}%
+    \clearpage
+    \setcounter{page}{2}%
+    %\@ifundefined{@cipspecificinfo}{\@makenominatapage}{\@makecippage}
+    \@ifundefined{@cipspecificinfo}{}{\@makecippage}
+    \setlinespacing
+    \@ifundefined{@bancaa}{}{\folhadeaprovacao}%
 }
 \newcommand{\thetitlepage}{%
-  \noindent\@topbox\\
-  %\vspace{5.9ex}\\
-  \vfill
-  \centerline{\textbf{\@city}}
-  \centerline{\textbf{\ii@date}}
-  \vspace{8mm}
-  \clearpage
-  \noindent\@authorbox\\
-  \vspace{5.9ex}\\
-  \setstretch{0.95}
-  \@ifundefined{titlepagespecificinfo}{}{
-    \hspace*{\fill}\makebox[.56\textwidth][l]{%
-      \parbox[t]{0.56\textwidth}{\lefthyphenmin=64\titlepagespecificinfo}%
-    }%
-    \vspace{5.5ex}\\
-  }
-  \@ifundefined{@advisor}{}{
-    \hspace*{\fill}\makebox[.56\textwidth][l]{%
-      \parbox[t]{0.56\textwidth}{\raggedright\lefthyphenmin=64\titlepageadvisorinfo}%
-    }%
-  }
-  \vfill
-  \centerline{\textbf{\@city}}
-  \centerline{\textbf{\ii@date}}
-  \vspace{8mm}
+    \noindent\@topbox\\
+    %\vspace{5.9ex}\\
+    \vfill
+    \centerline{\textbf{\@city}}
+    \centerline{\textbf{\ii@date}}
+    \vspace{8mm}
+    \clearpage
+    \noindent\@authorbox\\
+    \vspace{5.9ex}\\
+    \setstretch{0.95}
+    \@ifundefined{titlepagespecificinfo}{}{
+        \hspace*{\fill}\makebox[.56\textwidth][l]{%
+            \parbox[t]{0.56\textwidth}{\lefthyphenmin=64\titlepagespecificinfo}%
+        }%
+        \vspace{5.5ex}\\
+    }
+    \@ifundefined{@advisor}{}{
+        \hspace*{\fill}\makebox[.56\textwidth][l]{%
+            \parbox[t]{0.56\textwidth}{\raggedright\lefthyphenmin=64\titlepageadvisorinfo}%
+        }%
+    }
+    \vfill
+    \centerline{\textbf{\@city}}
+    \centerline{\textbf{\ii@date}}
+    \vspace{8mm}
 }
 \def\@topbox{%
-        \parbox[t]{\textwidth}{%
-                \centering%
-                \vbox to \titlepagewinvoffset{%
-                        \titlepagetopinfo\vfill\@winbox
-                }
+    \parbox[t]{\textwidth}{%
+        \centering%
+        \vbox to \titlepagewinvoffset{%
+            \titlepagetopinfo\vfill\@winbox
         }
+    }
 }
 \def\@authorbox{%
-        \parbox[t]{\textwidth}{%
-                \centering%
-                \vbox to \titlepagewinvoffset{%
-                        \titlepageauthorinfo\vfill\@authorwinbox
-                }
+    \parbox[t]{\textwidth}{%
+        \centering%
+        \vbox to \titlepagewinvoffset{%
+            \titlepageauthorinfo\vfill\@authorwinbox
         }
+    }
 }
 \def\@authorwinbox{%
 %       \fbox{
-        \parbox[b]{\titlepagewinwidth}{%
+    \parbox[b]{\titlepagewinwidth}{%
         \centering\vbox to \titlepagewinheight{%
-                \vspace*{5ex}
-                {\large\MakeUppercase{\textbf{\@title}}\par}
-                \vfill
+            \vspace*{5ex}
+            {\large\MakeUppercase{\textbf{\@title}}\par}
+            \vfill
         }%
-       }%
+    }%
 }
 \def\@winbox{%
 %       \fbox{
-        \parbox[b]{\titlepagewinwidth}{%
+    \parbox[b]{\titlepagewinwidth}{%
         \centering\vbox to \titlepagewinheight{%
-                \vspace*{5ex}
-                \MakeUppercase{\textbf{\@authora}}\\
-                \@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}\\}%
-                \@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}%
-                \@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}%
-                \vspace{3cm}
-                {\large\MakeUppercase{\textbf{\@title}}\par}
-                \vfill
+            \vspace*{5ex}
+            \MakeUppercase{\textbf{\@authora}}\\
+            \@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}\\}%
+            \@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}%
+            \@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}%
+            \vspace{3cm}
+            {\large\MakeUppercase{\textbf{\@title}}\par}
+            \vfill
         }}%
 %       }%
 }
 
 \newcommand{\titlepagetopinfo}{%
-        \MakeUppercase{\bf\UFBA}\\
-        %\MakeUppercase{Campus \@city}\\
-        %\@ifundefined{@dept}{}{\MakeUppercase{\csname dept\@dept\endcsname}\\}%
-        %\MakeUppercase{\@course}\\
+    \MakeUppercase{\bf\UFBA}\\
+%\MakeUppercase{Campus \@city}\\
+%\@ifundefined{@dept}{}{\MakeUppercase{\csname dept\@dept\endcsname}\\}%
+%\MakeUppercase{\@course}\\
 }
 \newcommand{\titlepageauthorinfo}{%
-                \MakeUppercase{\textbf{\@authora}}\\
-                \@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}\\}%
-                \@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}%
-                \@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}%
-                %\vspace{3cm}
-                %{\large\textbf{\@title}\par}
+    \MakeUppercase{\textbf{\@authora}}\\
+    \@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}\\}%
+    \@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}%
+    \@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}%
+%\vspace{3cm}
+%{\large\textbf{\@title}\par}
 }
 \newcommand{\titlepageadvisorinfo}{%
-        \@ifundefined{@advisor}{}{\advisorname:~\@advisorfirst\ \@advisorlast\\}%
-        \@ifundefined{@coadvisor}{}{\coadvisorname:~\@coadvisorfirst\ \@coadvisorlast\\}%
+    \@ifundefined{@advisor}{}{\advisorname:~\@advisorfirst\ \@advisorlast\\}%
+    \@ifundefined{@coadvisor}{}{\coadvisorname:~\@coadvisorfirst\ \@coadvisorlast\\}%
 }
 
 %==============================================================================
-% DefiniÁ„o da folha de aprovaÁ„o
+% Defini√ß√£o da folha de aprova√ß√£o
 %==============================================================================
 
-\newcommand{\defesa}[3]{        
-        \gdef\@defday{#1}
-        \gdef\@defmonth{#2}%
-        \gdef\@defyear{#3}%
+\newcommand{\defesa}[3]{
+    \gdef\@defday{#1}
+    \gdef\@defmonth{#2}%
+    \gdef\@defyear{#3}%
 }
 
 \newcommand{\folhadeaprovacao}{%
-  \clearpage
-  %\noindent\@approvalbox\\
-  \noindent\parbox[t]{\textwidth}{%
-       \centering%
-       \vbox to \approvalpagewinvoffset{%
-           \titlepageauthorinfo
-           \vfill
-           %\@approvalwinbox
-           \parbox[b]{\titlepagewinwidth}{%
-           %\centering\vbox to .5\titlepagewinheight{%
+    \clearpage
+    %\noindent\@approvalbox\\
+    \noindent\parbox[t]{\textwidth}{%
+        \centering%
+        \vbox to \approvalpagewinvoffset{%
+            \titlepageauthorinfo
+            \vfill
+            %\@approvalwinbox
+            \parbox[b]{\titlepagewinwidth}{%
+            %\centering\vbox to .5\titlepagewinheight{%
                 \vspace*{20mm}
                 {\large\MakeUppercase{\textbf{\@title}}\par}
             }
-       %}
-       \vspace{36pt}
-       \setstretch{0.95}
-       \vfill
-       \@ifundefined{titlepagespecificinfo}{}{
-             \hspace*{\fill}\makebox[.56\textwidth][l]{%
-                 \parbox[t]{0.56\textwidth}{\lefthyphenmin=64\titlepagespecificinfo}%
-             }%
-             \vspace{12pt}\\
+            %}
+            \vspace{36pt}
+            \setstretch{0.95}
+            \vfill
+            \@ifundefined{titlepagespecificinfo}{}{
+                \hspace*{\fill}\makebox[.56\textwidth][l]{%
+                    \parbox[t]{0.56\textwidth}{\lefthyphenmin=64\titlepagespecificinfo}%
+                }%
+                \vspace{12pt}\\
+            }
+            \@ifundefined{areacourse}{}{
+                \hspace*{\fill}\makebox[\textwidth][r]{%
+                    \parbox[t]{0.56\textwidth}{ \righthyphenmin=64\areacourse}%
+                }%
+                \vspace{18pt}\\
+            }
         }
-				\@ifundefined{areacourse}{}{
-				    \hspace*{\fill}\makebox[\textwidth][r]{%
-				        \parbox[t]{0.56\textwidth}{¡rea de concentraÁ„o: \righthyphenmin=64\areacourse}%
-				    }%
-				    \vspace{18pt}\\
-				}
-     }
-  }
-  \vfill
-  %\parbox[b]{.5\titlepagewinwidth}{%
-  %      \centering\vbox to .5\titlepagewinheight{%
-  %              \vspace*{20mm}
-  %				       }%
-	%}
-  \noindent\@bancabox\\
+    }
+    \vfill
+    %\parbox[b]{.5\titlepagewinwidth}{%
+    %      \centering\vbox to .5\titlepagewinheight{%
+    %              \vspace*{20mm}
+    %				       }%
+    %}
+    \noindent\@bancabox\\
 }
 
 %\def\@approvalbox{%
@@ -514,7 +514,7 @@
 %                        }%
 %				                \@ifundefined{areacourse}{}{
 %				                   \hspace*{\fill}\makebox[\textwidth][r]{%
-%				                      \parbox[t]{0.56\textwidth}{¡rea de concentraÁ„o: \righthyphenmin=64\areacourse}%
+%				                      \parbox[t]{0.56\textwidth}{√Årea de concentra√ß√£o: \righthyphenmin=64\areacourse}%
 %				                   }%
 %				                   \vspace{18pt}\\
 %				                }
@@ -523,214 +523,216 @@
 %        }
 %}
 %\def\@approvalwinbox{%
-        %\parbox[b]{\titlepagewinwidth}{%
-        %\centering\vbox to .5\titlepagewinheight{%
-                %\vspace*{20mm}
-               % {\large\MakeUppercase{\textbf{\@title}}\par}
-     %   }%
-    %   }%
+%\parbox[b]{\titlepagewinwidth}{%
+%\centering\vbox to .5\titlepagewinheight{%
+%\vspace*{20mm}
+% {\large\MakeUppercase{\textbf{\@title}}\par}
+%   }%
+%   }%
 %}
 
 \def\@bancabox{%
-        \parbox[t]{\textwidth}{%
-                \centering%
-                \vbox to .5\textheight{%
-                        \vfill
-                        \@newbancawinbox
-                }
+    \parbox[t]{\textwidth}{%
+        \centering%
+        \vbox to .5\textheight{%
+            \vfill
+            \@newbancawinbox
         }
+    }
 }
 
 \def\@newbancawinbox{%
-        %\raggedright%\framebox[.9\textwidth]{%
-        
-						 \centering
-             \begin{minipage}{.9\textwidth}%
-						    \centering
-                \setstretch{0.95}
-                \vspace*{0.2ex}
-                \setlength{\parindent}{0em}%
-                \setlength{\parskip}{1.3ex}%
-                \textapproval\ \@defday\ de \@defmonth\ de \@defyear.\\
-    						\vspace*{12pt}
-    						Banca examinadora:\\
-    						%\hspace*{\fill}
-    						\begin{tabular}{p{10mm}cp{10mm}}
-    						          & &\\ & &\\ & &\\ 
-    						          \hline
-      										&\@advisor&\\ 
-      										&\advisorname&\\
-      										%&\@ifundefined\instorientador{Universidade Federal do Pampa}{\@instorientador}&\\
-      										\@ifundefined{@bancaa}{}{& &\\ & &\\ & &\\ \hline &\@bancaa& \\ &\@insta& \\}%
-      										\@ifundefined{@bancab}{}{& &\\ & &\\ & &\\ \hline &\@bancab& \\ &\@instb& \\}%
-      										\@ifundefined{@bancac}{}{& &\\ & &\\ & &\\ \hline &\@bancac& \\ &\@instc& \\}%
-      										\@ifundefined{@bancad}{}{& &\\ & &\\ & &\\ \hline &\@bancad& \\ &\@instd& \\}%
-      										\@ifundefined{@bancae}{}{& &\\ & &\\ & &\\ \hline &\@bancae& \\ &\@inste& \\}%
-      					\end{tabular}
-   							\vspace*{20mm}
-								\vfill
-             \end{minipage}%
-             \vspace*{10mm}
+%\raggedright%\framebox[.9\textwidth]{%
+
+    \centering
+    \begin{minipage}{.9\textwidth}%
+        \centering
+        \setstretch{0.95}
+        \vspace*{0.2ex}
+        \setlength{\parindent}{0em}%
+        \setlength{\parskip}{1.3ex}%
+        \textapproval\ \@defday\ de \@defmonth\ de \@defyear.\\
+        \vspace*{12pt}
+        Banca examinadora:\\
+        %\hspace*{\fill}
+        \begin{tabular}{p{10mm}cp{10mm}}
+            &                                                                               & \\                          &                                                                     & \\                          &                                                                  & \\
+            \hline
+            & \@advisor & \\
+            & \advisorname                                                                               & \\
+            %&\@ifundefined\instorientador{Universidade Federal do Pampa}{\@instorientador}&\\
+            \@ifundefined{@bancaa}{}{ &                                                                               & \\ &                                                                               & \\ &                                                                               & \\ \hline & \@bancaa                                                                               & \\ & \@insta                                                                               & \\}%
+            \@ifundefined{@bancab}{}{ &                                                                               & \\ &                                                                               & \\ &                                                                               & \\ \hline & \@bancab                                                                               & \\ & \@instb                                                                               & \\}%
+            \@ifundefined{@bancac}{}{ &                                                                               & \\ &                                                                               & \\ &                                                                               & \\ \hline & \@bancac                                                                               & \\ & \@instc                                                                               & \\}%
+            \@ifundefined{@bancad}{}{ &                                                                               & \\ &                                                                               & \\ &                                                                               & \\ \hline & \@bancad                                                                               & \\ & \@instd                                                                               & \\}%
+            \@ifundefined{@bancae}{}{ &                                                                               & \\ &                                                                               & \\ &                                                                               & \\ \hline & \@bancae                                                                               & \\ & \@inste                                                                               & \\}%
+        \end{tabular}
+        \vspace*{20mm}
+        \vfill
+    \end{minipage}%
+    \vspace*{10mm}
 }
 
 \def\@bancawinbox{%
-        \parbox[b]{\titlepagewinwidth}{%
-           \centering\vbox to \titlepagewinheight{%
-                \centering
-    					  \noindent DissertaÁ„o defendida e aprovada em: \@defday\ de \@defmonth\ de \@defyear.\\
-    						\vspace{12pt}
-    						\noindent Banca examinadora:
-    						%\hspace*{\fill}
-    						\makebox[\textwidth][c]{%
-      							\fbox{\parbox[c]{\textwidth}{%\lefthyphenmin=64%
-                          \setstretch{0.95}
-     										  \vspace{24pt}\@advisor\\ \advisorname \\%
-      										\@ifundefined{@bancaa}{}{\ \vspace{24pt}{\@bancaa}\\}%
-      										\@ifundefined{@bancab}{}{\ \vspace{24pt}{\@bancab}\\}%
-      										\@ifundefined{@bancac}{}{\ \vspace{24pt}{\@bancac}\\}%
-      										\@ifundefined{@bancad}{}{\ \vspace{24pt}{\@bancad}\\}%
-      										\@ifundefined{@bancae}{}{\ \vspace{24pt}{\@bancae}\\}%
-   							 		      \vfill
-   							 		}%
-        				    \vspace{20mm}}
-        				}%
-          }%
-     }
+    \parbox[b]{\titlepagewinwidth}{%
+        \centering\vbox to \titlepagewinheight{%
+            \centering
+            \noindent Disserta√ß√£o defendida e aprovada em: \@defday\ de \@defmonth\ de \@defyear.\\
+            \vspace{12pt}
+            \noindent Banca examinadora:
+            %\hspace*{\fill}
+            \makebox[\textwidth][c]{%
+                \fbox{\parbox[c]{\textwidth}{%\lefthyphenmin=64%
+                    \setstretch{0.95}
+                    \vspace{24pt}\@advisor\\ \advisorname \\%
+                    \@ifundefined{@bancaa}{}{\ \vspace{24pt}{\@bancaa}\\}%
+                    \@ifundefined{@bancab}{}{\ \vspace{24pt}{\@bancab}\\}%
+                    \@ifundefined{@bancac}{}{\ \vspace{24pt}{\@bancac}\\}%
+                    \@ifundefined{@bancad}{}{\ \vspace{24pt}{\@bancad}\\}%
+                    \@ifundefined{@bancae}{}{\ \vspace{24pt}{\@bancae}\\}%
+                    \vfill
+                }%
+                \vspace{20mm}}
+            }%
+        }%
+    }
 }
 
 
 %==============================================================================
-% CatalogaÁ„oo na fonte (CIP) 
+% Cataloga√ß√£oo na fonte (CIP) 
 %==============================================================================
 \newcommand{\@makecippage}{%
-        \clearpage%
-        \ \vfill
-        \begin{center}
-                %\textbf{\cipcaption}\\[2ex]
-                \iiu@cipwindow
-        \end{center}
-        %\vfill
-        %\nominata
+    \clearpage%
+    \ \vfill
+    \begin{center}
+        %\textbf{\cipcaption}\\[2ex]
+        \iiu@cipwindow
+    \end{center}
+%\vfill
+%\nominata
 }
 
 \newcommand{\cutter}[1]{\gdef\@cutter{#1}}
 
 %
-% definiÁ„o do quadro de catalogaÁ„o bibliogr·fica
+% defini√ß√£o do quadro de cataloga√ß√£o bibliogr√°fica
 %
 \def\iiu@cipwindow{%
-        \framebox[125mm]{%
-        
+    \framebox[125mm]{%
+
         \begin{minipage}{110mm}%
-                \vspace*{0.2ex}
+            \vspace*{0.2ex}
+            \setlength{\parindent}{1.5em}%
+            \setlength{\parskip}{1.3ex}%
+            \hspace{-12mm}\parbox[t]{5mm}{\@cutter}
+            \hspace{12mm}\parbox[t]{95mm}{
                 \setlength{\parindent}{1.5em}%
                 \setlength{\parskip}{1.3ex}%
-                \hspace{-12mm}\parbox[t]{5mm}{\@cutter}
-                \hspace{12mm}\parbox[t]{95mm}{
-                        \setlength{\parindent}{1.5em}%
-                        \setlength{\parskip}{1.3ex}%
-                				\noindent\@authoralast, \@authorafirst\par
-                				\@title\ / \@authora.\ -- \@publmonth, \@publyear. \par
-                				\pageref{LastPage}~f.: il. \par
-                				\@cipspecificinfo\ -- Universidade Federal da Bahia, Campus \@campus, \@course,  \@publyear. \par
-                				``OrientaÁ„o: \@advisorfirst\ \@advisorlast\@ifundefined{@coadvisor}{}{; Co-orientaÁ„o: \@coadvisorfirst\ \@coadvisorlast}''.\par
-               					 \@cipkw I.~TÌtulo.\\
+                \noindent\@authoralast, \@authorafirst\par
+                \@title\ / \@authora.\ -- \@publmonth, \@publyear. \par
+                \pageref{LastPage}~f.: il. \par
+                \@cipspecificinfo\ -- Universidade Federal da Bahia, Campus \@campus, \@course,  \@publyear. \par
+                ``Orienta√ß√£o: \@advisorfirst\ \@advisorlast\@ifundefined{@coadvisor}{}{; Co-orienta√ß√£o: \@coadvisorfirst\ \@coadvisorlast}''.\par
+                \@cipkw I.~T√≠tulo.\\
                 \vspace{0.2ex}}
         \end{minipage}
-        }%
+    }%
 }
 
 %==============================================================================
-% DedicatÛria
+% Dedicat√≥ria
 %==============================================================================
 
-\newenvironment{dedicatoria}{\clearpage\begin{flushright}\ \vfill\begin{minipage}{.5\textwidth}}{\end{minipage}\end{flushright}}
+\newenvironment{dedicatoria}{\clearpage\begin{flushright}
+                                           \ \vfill\begin{minipage}{.5\textwidth}}{\end{minipage}
+\end{flushright}}
 
 %==============================================================================
-% EpÌgrafe
+% Ep√≠grafe
 %==============================================================================
 
 \newenvironment{epigrafe}{\begin{dedicatoria}}{\end{dedicatoria}}
 
 %==============================================================================
-% Ajuste do sum·rio
+% Ajuste do sum√°rio
 %==============================================================================
 \renewcommand{\@dotsep}{0}
 \newlength{\dottedspace}
 \newcommand{\pnbox}[1]{\settowidth{\dottedspace}{\bfseries#1}\hb@xt@\dottedspace{#1}}
 
 \newcommand\samepagechapter{
-                    %\thispagestyle{plain}%
-                    \global\@topnum\z@
-                    \@afterindentfalse
-                    \secdef\@chapter\@schapter}
+%\thispagestyle{plain}%
+    \global\@topnum\z@
+    \@afterindentfalse
+    \secdef\@chapter\@schapter}
 
 \setcounter{tocdepth}{3}
 \newif\if@aftertoc
 \@aftertocfalse
 \renewcommand{\tableofcontents}{%
-  \chapter*{\contentsname}
-  \vspace{0.4\baselineskip}
-  \setstretch{0.95}
-  \@starttoc{toc}\@aftertoctrue%
-  % retorna o espa√ßamento ao seu valor original
-  \setlinespacing
+    \chapter*{\contentsname}
+    \vspace{0.4\baselineskip}
+    \setstretch{0.95}
+    \@starttoc{toc}\@aftertoctrue%
+    % retorna o espa√É¬ßamento ao seu valor original
+    \setlinespacing
 }
 \renewcommand{\listoffigures}{%
-  \chapter*{\listfigurename}
-  \setstretch{0.95}
-  \@starttoc{lof}%
-  % retorna o espa√ßamento ao seu valor original
-  \setlinespacing
+    \chapter*{\listfigurename}
+    \setstretch{0.95}
+    \@starttoc{lof}%
+    % retorna o espa√É¬ßamento ao seu valor original
+    \setlinespacing
 }
 \renewcommand{\listoftables}{%
-  \chapter*{\listtablename}
-  \setstretch{0.95}
-  \@starttoc{lot}%
-  % retorna o espa√ßamento ao seu valor original
-  \setlinespacing
+    \chapter*{\listtablename}
+    \setstretch{0.95}
+    \@starttoc{lot}%
+    % retorna o espa√É¬ßamento ao seu valor original
+    \setlinespacing
 }
 
 %==============================================================================
-% Defini√ß√£o das listas de abreviaturas e siglas e de s√≠mbolos
+% Defini√É¬ß√É¬£o das listas de abreviaturas e siglas e de s√É¬≠mbolos
 %==============================================================================
 \newenvironment{listofabbrv}[1]{
-        \chapter*{\listabbrvname}
-        \begin{list}{\textbf{??}}{
-                \settowidth{\labelwidth}{#1}
-                \setlength{\labelsep}{1em}
-                \setlength{\itemindent}{0mm}
-                \setlength{\leftmargin}{\labelwidth}
-                \addtolength{\leftmargin}{\labelsep}
-                \setlength{\rightmargin}{0mm}
-                \setlength{\itemsep}{.1\baselineskip}
-                \renewcommand{\makelabel}[1]{\makebox[\labelwidth][l]{##1}}
-        }
-}{
-        \end{list}
+    \chapter*{\listabbrvname}
+    \begin{list}{\textbf{??}}{
+        \settowidth{\labelwidth}{#1}
+        \setlength{\labelsep}{1em}
+        \setlength{\itemindent}{0mm}
+        \setlength{\leftmargin}{\labelwidth}
+        \addtolength{\leftmargin}{\labelsep}
+        \setlength{\rightmargin}{0mm}
+        \setlength{\itemsep}{.1\baselineskip}
+        \renewcommand{\makelabel}[1]{\makebox[\labelwidth][l]{##1}}
+    }
+    }{
+    \end{list}
 }
 \newenvironment{listofsymbols}[1]{
-        \chapter*{\listsymbolname}
-        \begin{list}{\textbf{??}}{
-                \settowidth{\labelwidth}{#1}
-                \setlength{\labelsep}{1em}
-                \setlength{\itemindent}{0mm}
-                \setlength{\leftmargin}{\labelwidth}
-                \addtolength{\leftmargin}{\labelsep}
-                \setlength{\rightmargin}{0mm}
-                \setlength{\itemsep}{.1\baselineskip}
-                \renewcommand{\makelabel}[1]{\makebox[\labelwidth][l]{##1}}
-        }
-}{
-        \end{list}
+    \chapter*{\listsymbolname}
+    \begin{list}{\textbf{??}}{
+        \settowidth{\labelwidth}{#1}
+        \setlength{\labelsep}{1em}
+        \setlength{\itemindent}{0mm}
+        \setlength{\leftmargin}{\labelwidth}
+        \addtolength{\leftmargin}{\labelsep}
+        \setlength{\rightmargin}{0mm}
+        \setlength{\itemsep}{.1\baselineskip}
+        \renewcommand{\makelabel}[1]{\makebox[\labelwidth][l]{##1}}
+    }
+    }{
+    \end{list}
 }
 
 %==============================================================================
 % Resumo (abstract) e Abstract (englishabstract)
 %==============================================================================
 \renewenvironment{abstract}{%
-        \chapter*{\abstractname}\setlength{\parindent}{0pt}
-}{%
+    \chapter*{\abstractname}\setlength{\parindent}{0pt}
+    }{%
     %\par\vfill
     %\\
     \\
@@ -739,54 +741,54 @@
 }
 
 \newenvironment{englishabstract}[1]{%
-        \if@openright\cleardoublepage\else\clearpage\fi%
-        \gdef\@englishkeywords{#1}%
-        \iflanguage{english}{
-                \begin{otherlanguage}{brazilian}
-        }{
-                \begin{otherlanguage}{english}
-        }
-        %\begin{center}%
-        %    \textbf{#1}%
-        %    \vspace{12pt}
-        %\end{center}
-        \samepagechapter*{\abstractname}\setlength{\parindent}{0pt}
+\if@openright\cleardoublepage\else\clearpage\fi%
+\gdef\@englishkeywords{#1}%
+\iflanguage{english}{
+    \begin{otherlanguage}{brazilian}
+}{
+    \begin{otherlanguage}{english}
+}
+%\begin{center}%
+%    \textbf{#1}%
+%    \vspace{12pt}
+%\end{center}
+\samepagechapter*{\abstractname}\setlength{\parindent}{0pt}
 }{%
-  \vspace{12pt}
+\vspace{12pt}
 
-  \noindent\textbf{\keywordsname:} \@englishkeywords.
+\noindent\textbf{\keywordsname:} \@englishkeywords.
 \end{otherlanguage}
 }
 
 \newenvironment{oldenglishabstract}[2]{%
-        \if@openright\cleardoublepage\else\clearpage\fi%
-        \gdef\@englishkeywords{#2}%
-        \iflanguage{english}{
-                \begin{otherlanguage}{brazilian}
-        }{
-                \begin{otherlanguage}{english}
-        }
-        \begin{center}%
-            \textbf{#1}%
-            \vspace{12pt}
-        \end{center}
-        \samepagechapter*{\abstractname}\setlength{\parindent}{0pt}
+\if@openright\cleardoublepage\else\clearpage\fi%
+\gdef\@englishkeywords{#2}%
+\iflanguage{english}{
+\begin{otherlanguage}{brazilian}
+}{
+\begin{otherlanguage}{english}
+}
+\begin{center}%
+\textbf{#1}%
+\vspace{12pt}
+\end{center}
+\samepagechapter*{\abstractname}\setlength{\parindent}{0pt}
 }{%
-  \vspace{12pt}
+\vspace{12pt}
 
-  \noindent\textbf{\keywordsname:} \@englishkeywords.
+\noindent\textbf{\keywordsname:} \@englishkeywords.
 \end{otherlanguage}
 }
 
 
 %==============================================================================
-% FormataÁ„o dos capÌtulos.
-% Os comandos \@chapter e \@schapter s„o redefinidos para que a
-% numeraÁ„o de p·ginas seja correta (deve aparecer somente a partir do
-% primeiro capÌtulo do texto, mas n„o nas p·ginas iniciais de
-% capÌtulos).
+% Formata√ß√£o dos cap√≠tulos.
+% Os comandos \@chapter e \@schapter s√£o redefinidos para que a
+% numera√ß√£o de p√°ginas seja correta (deve aparecer somente a partir do
+% primeiro cap√≠tulo do texto, mas n√£o nas p√°ginas iniciais de
+% cap√≠tulos).
 % Os comandos \@makechapterhead e \@makeschapterhead fazem a
-% formataÁ„o dos tÌtulos propriamente ditos.
+% formata√ß√£o dos t√≠tulos propriamente ditos.
 %==============================================================================
 \newcounter{schapter}
 \newcommand{\ii@chapterfont}{\@setfontsize\Large{12}{18}}
@@ -794,56 +796,56 @@
 \def\@chapappextra{}
 \def\@chappositioning{\noindent}
 \def\@chapter[#1]#2{%
-        \xdef\Hy@chapapp{CHAPTER}%
-        \gdef\theHchapter{\thechapter}%
-        \refstepcounter{chapter}%
-        \addcontentsline{toc}{chapter}{\@chapapp\thechapter~\@chapappextra#1}%
-        \addtocontents{lof}{\protect\addvspace{10\p@}}%
-        \addtocontents{lot}{\protect\addvspace{10\p@}}%
-        \addtocontents{lol}{\protect\addvspace{10\p@}}%
-        \pagestyle{iiufrgs}\let\ps@plain\ps@iiufrgs%
-        \@makechapterhead{#2}{\@chappositioning}\@afterheading
+\xdef\Hy@chapapp{CHAPTER}%
+\gdef\theHchapter{\thechapter}%
+\refstepcounter{chapter}%
+\addcontentsline{toc}{chapter}{\@chapapp\thechapter~\@chapappextra#1}%
+\addtocontents{lof}{\protect\addvspace{10\p@}}%
+\addtocontents{lot}{\protect\addvspace{10\p@}}%
+\addtocontents{lol}{\protect\addvspace{10\p@}}%
+\pagestyle{iiufrgs}\let\ps@plain\ps@iiufrgs%
+\@makechapterhead{#2}{\@chappositioning}\@afterheading
 
 }
 
 \def\@makechapterhead#1#2{%
-        %\vspace*{90pt}
-        %\vspace{12pt}
-        \reset@font{#2{\ii@chapterfont\textbf{\@chapapp\thechapter\hphantom{~}\@chapappextra\MakeUppercase{#1}}\par}}
-        \addvspace{\baselineskip}
-        \noindent
-        %\par
+%\vspace*{90pt}
+%\vspace{12pt}
+\reset@font{#2{\ii@chapterfont\textbf{\@chapapp\thechapter\hphantom{~}\@chapappextra\MakeUppercase{#1}}\par}}
+\addvspace{\baselineskip}
+\noindent
+%\par
 }
 \def\@schapter#1{%
-        \xdef\Hy@chapapp{SCHAPTER}%
-        \refstepcounter{schapter}%
-        \if@aftertoc%
-            \hyperdef{SCHAPTER}{\theschapter}{}%
-            \@makeschapterhead{#1}\@afterheading%
-            \addcontentsline{toc}{chapter}{\@chapapp\xspace{}\@chapappextra#1}%
-        \else%
-            \pdfbookmark[0]{#1}{MUTESCHAPTER.\theschapter}%
-            \@makeschapterhead{#1}\@afterheading%
-        \fi%
-        \addtocontents{lof}{\protect\addvspace{10\p@}}%
-        \addtocontents{lot}{\protect\addvspace{10\p@}}%
+\xdef\Hy@chapapp{SCHAPTER}%
+\refstepcounter{schapter}%
+\if@aftertoc%
+\hyperdef{SCHAPTER}{\theschapter}{}%
+\@makeschapterhead{#1}\@afterheading%
+\addcontentsline{toc}{chapter}{\@chapapp\xspace{}\@chapappextra#1}%
+\else%
+\pdfbookmark[0]{#1}{MUTESCHAPTER.\theschapter}%
+\@makeschapterhead{#1}\@afterheading%
+\fi%
+\addtocontents{lof}{\protect\addvspace{10\p@}}%
+\addtocontents{lot}{\protect\addvspace{10\p@}}%
 }
 \def\@makeschapterhead#1{%
-        %\vspace*{90pt}
-        \reset@font\centerline{\ii@chapterfont\textbf{\MakeUppercase{\@chapapp\xspace{}\@chapappextra#1}}}
-        \addvspace{18pt}
+%\vspace*{90pt}
+\reset@font\centerline{\ii@chapterfont\textbf{\MakeUppercase{\@chapapp\xspace{}\@chapappextra#1}}}
+\addvspace{18pt}
 }
 \renewcommand{\appendix}[1][\appendixname]{
-    \setcounter{chapter}{0}%
-    \renewcommand{\thechapter}{\Alph{chapter}}%
-    \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
-    \gdef\@chapappextra{---\space}%
-    \gdef\@chappositioning{\centering}
+\setcounter{chapter}{0}%
+\renewcommand{\thechapter}{\Alph{chapter}}%
+\gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
+\gdef\@chapappextra{---\space}%
+\gdef\@chappositioning{\centering}
 }
 \newcommand{\annex}{\appendix[\annexname]}
 
 %==============================================================================
-% Formata√ß√£o das se√ß√µes
+% Formata√É¬ß√É¬£o das se√É¬ß√É¬µes
 %==============================================================================
 \setcounter{secnumdepth}{5}
 \renewcommand{\@seccntformat}[1]{\csname the#1\endcsname\ }
@@ -871,31 +873,31 @@
 % }
 
 %==============================================================================
-% Redefini√ß√£o do formato de cita√ß√µes longas
+% Redefini√É¬ß√É¬£o do formato de cita√É¬ß√É¬µes longas
 %==============================================================================
 \renewenvironment{quote}{%
-        \setstretch{1}%
-        \small%
-        \begin{list}{}{\setlength{\leftmargin}{40mm}\item\relax}
-        \fontsize{10bp}{12bp}\selectfont%
+\setstretch{1}%
+\small%
+\begin{list}{}{\setlength{\leftmargin}{40mm}\item\relax}
+\fontsize{10bp}{12bp}\selectfont%
 }{%
-        \end{list}
+\end{list}
 }
 
 
 %==============================================================================
-% Ajuste do espaÁamento entre itens em 'enumerate', 'itemize' e 'description'
+% Ajuste do espa√ßamento entre itens em 'enumerate', 'itemize' e 'description'
 %==============================================================================
 \renewenvironment{enumerate}{%
-  \begin{list}{\arabic{enumi}.}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt\usecounter{enumi}}%
+\begin{list}{\arabic{enumi}.}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt\usecounter{enumi}}%
 }{\end{list}}
 
 \renewenvironment{itemize}{%
-  \begin{list}{\bfseries\upshape $\bullet$}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt}%
+\begin{list}{\bfseries\upshape $\bullet$}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt}%
 }{\end{list}}
 
 \renewenvironment{description}{
-  \begin{list}{}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt \labelwidth\z@ \itemindent-\leftmargin \let\makelabel\descriptionlabel}
+\begin{list}{}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt \labelwidth\z@ \itemindent-\leftmargin \let\makelabel\descriptionlabel}
 }{\end{list}}
 
 %==============================================================================
@@ -907,19 +909,19 @@
 %\restylefloat{table}
 
 %\captiondelim{ -- }																												% separador entre no nome Figura e o seu nome
-\captionsetup[figure]{justification=raggedright,singlelinecheck=false}    % tÌtulo das figuras alinhado ‡ esquerda
-\captionsetup[table]{justification=centering,singlelinecheck=false}       % tÌtulo das tabelas centralizado
+\captionsetup[figure]{justification=raggedright,singlelinecheck=false}    % t√≠tulo das figuras alinhado √† esquerda
+\captionsetup[table]{justification=centering,singlelinecheck=false}       % t√≠tulo das tabelas centralizado
 %\setlength{\abovecaptionskip}{0pt}
 %\setlength{\belowcaptionskip}{0pt}
 %\setlength{\belowlegendskip}{0pt}
 
 %\captiontitlefont{\small}
-\newcommand{\fonte}[1]{\legend{{\small Fonte: #1}}}                       % definiÁ„o da fonte de figuras e tabelas com fonte menor
+\newcommand{\fonte}[1]{\legend{{\small Fonte: #1}}}                       % defini√ß√£o da fonte de figuras e tabelas com fonte menor
 
 %==============================================================
-% ajustes manual de normalizaÁ„o (CÈsar Huegel - 12/2016)
+% ajustes manual de normaliza√ß√£o (C√©sar Huegel - 12/2016)
 % separador caption label 
-% numeraÁ„o contÌnua para figuras, tabelas e equaÁıes
+% numera√ß√£o cont√≠nua para figuras, tabelas e equa√ß√µes
 %==============================================================
 \DeclareCaptionLabelSeparator{traco}{ -- }
 \captionsetup[figure]{labelformat=simple, labelsep=traco}
@@ -933,7 +935,7 @@
 \renewcommand{\theequation}{\arabic{equation}}
 
 
-\usepackage[hang,flushmargin]{footmisc} % remove indentaÁ„o nas notas de rodapÈ (CÈsar Huegel - 12/2016)
+\usepackage[hang,flushmargin]{footmisc} % remove indenta√ß√£o nas notas de rodap√© (C√©sar Huegel - 12/2016)
 
 
 

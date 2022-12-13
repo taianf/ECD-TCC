@@ -1,0 +1,20 @@
+\chapter{Modelos}
+\label{ch:modelos}
+
+Para treinar os modelos com validação cruzada no Spark, uma matriz de parâmetros foi fornecida para cada treino.
+Isso faz o Spark treinar uma quantidade de modelos dada pela equação~\ref{eq:qtd-modelos}, onde $k$ é o número de \textit{folds} na validação cruzada e $p_{i}$ é o número de parâmetros a treinar no i-ésimo hiperparâmetro.
+Isso implica que de testar muitos parâmetros eleva o tempo de treino.
+Neste trabalho foi usado $k = 3$ para todos os treinos e veremos em cada seção os parâmetros para cada modelo treinado.
+
+\begin{equation}
+    \label{eq:qtd-modelos}
+    k \times \prod_{i=0}^{n} p_i
+\end{equation}
+
+\input{3-modelos/3.1-regressaologistica.tex}
+\input{3-modelos/3.2-florestaaleatoria.tex}
+\input{3-modelos/3.3-gbt.tex}
+\input{3-modelos/3.4-mlp.tex}
+\input{3-modelos/3.5-lsvc.tex}
+\input{3-modelos/3.6-naivebayes.tex}
+\input{3-modelos/3.7-facmachine.tex}

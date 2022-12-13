@@ -1,0 +1,40 @@
+\section{Máquinas de fatoração}
+\label{sec:fm}
+
+Para treinar o modelo de Máquinas de fatoração a matriz de parâmetros na tabela~\ref{tab:param-fm} foi utilizada.
+Pela equação~\ref{eq:qtd-modelos}, foram treinados 135 ($3 \times 3 \times 3 \times 5$) modelos.
+Os parâmetros selecionados estão presentes na tabela~\ref{tab:param-final-fm}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro         & Valores                       \\ \hline
+        \textit{maxIter}  & 1, 5, 10                      \\
+        \textit{regParam} & 0.01, 0.02, 0.1               \\
+        \textit{stepSize} & 0.001, 0.005, 0.01, 0.05, 0.1 \\ \hline
+    \end{tabular}
+    \caption{Parâmetros para treino das Máquinas de fatoração}
+    \label{tab:param-fm}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro         & Valores \\ \hline
+        \textit{maxIter}  & 10      \\
+        \textit{regParam} & 0.02    \\
+        \textit{stepSize} & 0.1     \\ \hline
+    \end{tabular}
+    \caption{Parâmetros selecionados na validação cruzada das Máquinas de fatoração}
+    \label{tab:param-final-fm}
+\end{table}
+
+\textit{maxIter}: a quantidade máxima de iterações do algoritmo.
+
+\textit{regParam}: é o parâmetro de regularização.
+A regularização serve para prevenir \textit{overfitting}, penalizando modelos com valores de coeficiente muito altos.
+Coeficientes muito altos podem ocorrer quando há algum parâmetro raro que força uma correlação muito alta com a variável a ser estimada.
+
+\textit{stepSize}: o tamanho do incremento a cada iteração.

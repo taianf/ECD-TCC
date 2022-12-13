@@ -1,5 +1,5 @@
 %
-% Definições para os textos dos documentos
+% DefiniÃ§Ãµes para os textos dos documentos
 %
 \@namedef{captionsbrazilian}{%
 	\def\bibname{Refer{\^e}ncias}%
@@ -38,7 +38,7 @@
 	\def\dissname{Disserta{\c{c}}{\~a}o}%
 	\def\dissspecificinfo{%
 		Disserta{\c{c}}{\~a}o apresentada ao \@course\ como requisito parcial
-		para a obten{\c{c}}{\~a}o do título de
+		para a obten{\c{c}}{\~a}o do tÃ­tulo de
 		Mestre em \titulacaoEm.
 	}%
   \def\dissapproval{\dissname\ defendida e aprovada em:}
@@ -59,7 +59,7 @@
 	\def\financname{{\'O}rg{\~a}os Financiadores}%
 	\def\especname{Monografia}%
 	\def\especspecificinfo{%
-		Monografia de Conclus{\~a}o de Curso apresentada ao curso de pós-graduação \emph{lato sensu} em \@course\ como
+		Monografia de Conclus{\~a}o de Curso apresentada ao curso de pÃ³s-graduaÃ§Ã£o \emph{lato sensu} em \@course\ como
 		requisito parcial para a obten{\c{c}}{\~a}o do grau de Especialista em \@course.
 	}%
   \def\especapproval{\especname\ defendida e aprovada em:}

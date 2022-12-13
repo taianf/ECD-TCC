@@ -1,0 +1,56 @@
+\chapter{Análises}
+\label{ch:analises}
+
+Os dados disponíveis no OPENDATASUS possuem 3.443.459 entradas e totalizam 1,87GB em arquivos no formato csv (\textit{comma separated values}).
+Filtrando os dados de interesse totalizam 990.466 entradas.
+Estas entradas foram separadas em 8o\% para treino e validação e 20\% para teste.
+Estes 80\% foram usados na validação cruzada.
+A cada iteração dois terços desses 80\% foram usados para treino e um terço usado para avaliação dos modelos gerados.
+O melhor modelo gerado nas iterações é avaliado com os dados separados para teste.
+
+Para analisar os modelos de classificação gerados podemos usar algumas métricas: \textit{Accuracy}, \textit{Precision}, \textit{Recall} e \textit{F1 Score}.
+Estas métricas são calculadas com base nos valores de Verdadeiros Positivos (VP), Falsos Positivos (FP), Falsos Negativos (FN) e Verdadeiros Negativos (VN).
+Esse valores aparecem na Matriz de Confusão dos modelos gerados pelo Apache Spark.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Valor real \textbackslash{} Classificação do modelo & Positivo & Negativo \\ \hline
+        Positivo                                            & VP       & FN       \\ \hline
+        Negativo                                            & FP       & VN       \\ \hline
+    \end{tabular}
+    \caption{Matriz de confusão}
+    \label{tab:matriz-confusao}
+\end{table}
+
+\textit{Accuracy}~(\ref{eq:accuracy}), acurácia em português, é a divisão entre todos os acertos pelo total de previsões.
+
+\begin{equation}
+    \label{eq:accuracy}
+    \frac{VP + VN}{VP + VN + FP + FN}
+\end{equation}
+
+\textit{Precision}~(\ref{eq:precision}), precisão em português, é a divisão entre os Verdadeiros Positivos e todas as previsões positivas.
+
+\begin{equation}
+    \label{eq:precision}
+    \frac{VP}{VP + FP}
+\end{equation}
+
+\textit{Recall}~(\ref{eq:recall}), revocação em português, é a divisão entre os Verdadeiros Positivos e todas os valores que realmente são positivos.
+
+\begin{equation}
+    \label{eq:recall}
+    \frac{VP}{VP + FN}
+\end{equation}
+
+\textit{F1 Score}~(\ref{eq:f1score}), é a média harmônica entre \textit{Precision} e \textit{Recall}.
+
+\begin{equation}
+    \label{eq:f1score}
+    \frac{2 * Precision * Recall}{Precision + Recall}
+\end{equation}
+
+\input{4-analises/4.1-modelos}
+\input{4-analises/4.2-lr}

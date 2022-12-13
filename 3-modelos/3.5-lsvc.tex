@@ -1,0 +1,36 @@
+\section{Máquina de vetores de suporte}
+\label{sec:lsvc}
+
+Para treinar o modelo de Máquina de vetores de suporte, a matriz de parâmetros na tabela~\ref{tab:param-lsvc} foi utilizada.
+Pela equação~\ref{eq:qtd-modelos}, foram treinados 27 ($3 \times 3 \times 3$) modelos.
+Os parâmetros selecionados estão presentes na tabela~\ref{tab:param-final-lsvc}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro         & Valores         \\ \hline
+        \textit{maxIter}  & 1, 2, 3         \\
+        \textit{regParam} & 0.01, 0.02, 0.1 \\ \hline
+    \end{tabular}
+    \caption{Parâmetros para treino da Máquina de vetores de suporte}
+    \label{tab:param-lsvc}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parâmetro         & Valores \\ \hline
+        \textit{maxIter}  & 3       \\
+        \textit{regParam} & 0.02    \\ \hline
+    \end{tabular}
+    \caption{Parâmetros selecionados na validação cruzada da Máquina de vetores de suporte}
+    \label{tab:param-final-lsvc}
+\end{table}
+
+\textit{maxIter}: a quantidade máxima de iterações do algoritmo.
+
+\textit{regParam}: é o parâmetro de regularização.
+A regularização serve para prevenir \textit{overfitting}, penalizando modelos com valores de coeficiente muito altos.
+Coeficientes muito altos podem ocorrer quando há algum parâmetro raro que força uma correlação muito alta com a variável a ser estimada.
